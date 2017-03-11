@@ -6,7 +6,7 @@ import sys
 
 from ansible.module_utils.basic import AnsibleModule
 from ansible.module_utils.basic import _load_params
-from ansible.module_utils import six
+import six
 
 from pyopsview import OpsviewClient
 
