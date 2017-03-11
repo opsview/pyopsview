@@ -1,0 +1,107 @@
+type: object
+definitions:
+  reference:
+    type: object
+    properties:
+      name: {type: string, required: true}
+      ref: {type: string, readonly: true}
+  snmptraprule:
+    type: object
+    properties:
+      alertlevel: {type: number}
+      code: {type: string}
+      message: {type: string}
+      name: {type: string}
+      process: {type: boolean}
+      ref: {type: string}
+      uncommitted: {type: boolean, readonly: true}
+
+properties:
+  alert_from_failure:
+    default: 1
+    type: number
+  args: {required: true, type: string}
+  attribute: {type: 'null'}
+  calculate_rate:
+    default: no
+    type: string
+  cascaded_from:
+    type: [object, 'null']
+    $ref: '#/definitions/reference'
+  check_attempts:
+    default: 1
+    type: number
+  check_freshness:
+    default: true
+    type: boolean
+  check_interval: 
+    default: 300
+    type: number
+  check_period: 
+    default: 24x7
+    $ref: '#/definitions/reference'
+  checktype:
+    altname: check_type
+    default: Active Plugin
+    $ref: '#/definitions/reference'
+  critical_comparison: {type: 'null'}
+  critical_value: {type: 'null'}
+  dependencies:
+    type: array
+    items: {$ref: '#/definitions/reference'}
+  description: {type: string}
+  event_handler: {type: string}
+  flap_detection_enabled: {type: boolean}
+  freshness_type: {type: string}
+  hosts:
+    type: array
+    items: {$ref: '#/definitions/reference'}
+  hosttemplates: 
+    type: array
+    altname: host_templates
+    items: {$ref: '#/definitions/reference'}
+  id: {type: number, readonly: true}
+  invertresults:
+    altname: invert_results
+    type: boolean
+  keywords:
+    type: array
+    altname: hashtags
+    items: {$ref: '#/definitions/reference'}
+  label: {type: 'null'}
+  markdown_filter: {type: boolean}
+  name: 
+    type: string
+    required: true
+  notification_interval: {type: number}
+  notification_options: {type: string}
+  notification_period:
+    default: 24x7
+    $ref: '#/definitions/reference'
+  oid:
+    type: string
+  plugin: 
+    $ref: '#/definitions/reference'
+    required: true
+  retry_check_interval:
+    type: number
+    default: 300
+  sensitive_arguments: 
+    type: boolean
+    default: false
+  servicegroup:
+    altname: service_group
+    required: true
+    $ref: '#/definitions/reference'
+  snmptraprules: 
+    type: array
+    altname: snmp_trap_rules
+    items: {$ref: '#/definitions/snmptraprule'}
+  stale_state: {type: number}
+  stale_text: {type: string}
+  stale_threshold_seconds: {type: number}
+  stalking: {type: boolean}
+  uncommitted: {type: boolean, readonly: true}
+  volatile: {type: boolean}
+  warning_comparison: {type: 'null'}
+  warning_value: {type: 'null'}

@@ -1,0 +1,68 @@
+type: object
+definitions:
+  reference:
+    type: object
+    properties:
+      name: {type: string, required: true}
+      ref: {type: string, readonly: true}
+properties:
+  contacts:
+    type: array
+    items: {$ref: '#/definitions/reference'}
+  monitoringservers:
+    type: array
+    altname: configure_monitoring_servers
+    items: {$ref: '#/definitions/reference'}
+    default: []
+  hostgroups:
+    type: array
+    altname: configure_host_groups
+    items: {$ref: '#/definitions/reference'}
+    default: []
+  name:
+    type: string
+    required: true
+  id:
+    type: number
+    readonly: true
+  description:
+    type: string
+    default: ''
+  accesses: 
+    type: array
+    items: {$ref: '#/definitions/reference'}
+    default: []
+  access_hostgroups: 
+    type: array
+    altname: host_groups
+    default: []
+    items: {$ref: '#/definitions/reference'}
+  access_servicegroups: 
+    type: array
+    altname: service_groups
+    default: []
+    items: {$ref: '#/definitions/reference'}
+  access_keywords: 
+    type: array
+    altname: hashtags
+    default: []
+    items: {$ref: '#/definitions/reference'}
+  all_hostgroups: 
+    type: boolean
+    altname: all_host_groups
+    default: false
+  all_servicegroups: 
+    type: boolean
+    altname: all_service_groups
+    default: false
+  all_keywords: 
+    type: boolean
+    altname: all_hashtags
+    default: false
+  all_monitoringservers: 
+    type: boolean
+    altname: all_monitoring_servers
+    default: false
+  uncommitted:
+    type: boolean
+    readonly: true

@@ -1,0 +1,15 @@
+type: object
+definitions:
+  reference:
+    type: object
+    properties:
+      name: {type: string, required: true}
+      ref: {type: string, readonly: true}
+properties:
+  active: {type: boolean}
+  collector_id: {type: number}
+  host_id: {type: number}
+  id: {type: number, readonly: true}
+  port: {type: number}
+  ref: {type: string, readonly: true}
+  uncommitted: {type: boolean, readonly: true}

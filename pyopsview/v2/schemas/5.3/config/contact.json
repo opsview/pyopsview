@@ -1,0 +1,260 @@
+{
+    "definitions": {
+        "reference": {
+            "properties": {
+                "name": {
+                    "required": true, 
+                    "type": "string"
+                }, 
+                "ref": {
+                    "readonly": true, 
+                    "type": "string"
+                }
+            }, 
+            "type": "object"
+        }
+    }, 
+    "properties": {
+        "description": {
+            "default": "", 
+            "type": "string"
+        }, 
+        "enable_tips": {
+            "default": true, 
+            "type": "boolean"
+        }, 
+        "fullname": {
+            "altname": "name", 
+            "required": true, 
+            "type": "string"
+        }, 
+        "homepage_id": {
+            "default": 10, 
+            "type": "number"
+        }, 
+        "id": {
+            "readonly": true, 
+            "type": "number"
+        }, 
+        "language": {
+            "default": "", 
+            "type": "string"
+        }, 
+        "mylinks": {
+            "altname": "links", 
+            "default": [], 
+            "items": {
+                "properties": {
+                    "fontawesome_icon": {
+                        "$ref": "#/definitions/reference", 
+                        "altname": "icon"
+                    }, 
+                    "id": {
+                        "readonly": true, 
+                        "type": "number"
+                    }, 
+                    "name": {
+                        "required": true, 
+                        "type": "string"
+                    }, 
+                    "url": {
+                        "required": true, 
+                        "type": "string"
+                    }
+                }, 
+                "type": "object"
+            }, 
+            "type": "array"
+        }, 
+        "name": {
+            "altname": "username", 
+            "required": true, 
+            "type": "string"
+        }, 
+        "notificationprofiles": {
+            "altname": "notification_profiles", 
+            "default": [], 
+            "items": {
+                "properties": {
+                    "all_business_components": {
+                        "default": false, 
+                        "type": "boolean"
+                    }, 
+                    "all_business_services": {
+                        "default": false, 
+                        "type": "boolean"
+                    }, 
+                    "all_hostgroups": {
+                        "altname": "all_host_groups", 
+                        "default": false, 
+                        "type": "boolean"
+                    }, 
+                    "all_keywords": {
+                        "altname": "all_hashtags", 
+                        "default": false, 
+                        "type": "boolean"
+                    }, 
+                    "all_servicegroups": {
+                        "altname": "all_service_groups", 
+                        "default": false, 
+                        "type": "boolean"
+                    }, 
+                    "business_component_availability_below": {
+                        "default": "99.999", 
+                        "type": "number"
+                    }, 
+                    "business_component_options": {
+                        "default": "f,i", 
+                        "type": "string"
+                    }, 
+                    "business_component_renotification_interval": {
+                        "default": 1800, 
+                        "type": "number"
+                    }, 
+                    "business_components": {
+                        "default": [], 
+                        "items": {
+                            "$ref": "#/definitions/reference"
+                        }, 
+                        "type": "array"
+                    }, 
+                    "business_service_availability_below": {
+                        "default": "99.999", 
+                        "type": "number"
+                    }, 
+                    "business_service_options": {
+                        "default": "o,i", 
+                        "type": "string"
+                    }, 
+                    "business_service_renotification_interval": {
+                        "default": 1800, 
+                        "type": "number"
+                    }, 
+                    "business_services": {
+                        "default": [], 
+                        "items": {
+                            "$ref": "#/definitions/reference"
+                        }, 
+                        "type": "array"
+                    }, 
+                    "host_notification_options": {
+                        "default": "d,u,r,f", 
+                        "type": "string"
+                    }, 
+                    "hostgroups": {
+                        "altname": "host_groups", 
+                        "default": [], 
+                        "items": {
+                            "$ref": "#/definitions/reference"
+                        }, 
+                        "type": "array"
+                    }, 
+                    "include_component_notes": {
+                        "default": false, 
+                        "type": "boolean"
+                    }, 
+                    "include_service_notes": {
+                        "default": false, 
+                        "type": "boolean"
+                    }, 
+                    "keywords": {
+                        "altname": "hashtags", 
+                        "default": [], 
+                        "items": {
+                            "$ref": "#/definitions/reference"
+                        }, 
+                        "type": "array"
+                    }, 
+                    "name": {
+                        "required": true, 
+                        "type": "string"
+                    }, 
+                    "notification_level": {
+                        "default": 1, 
+                        "type": "number"
+                    }, 
+                    "notification_level_stop": {
+                        "default": 0, 
+                        "type": "number"
+                    }, 
+                    "notification_period": {
+                        "$ref": "#/definitions/reference", 
+                        "default": "24x7", 
+                        "type": "object"
+                    }, 
+                    "notificationmethods": {
+                        "altname": "notification_methods", 
+                        "items": {
+                            "$ref": "#/definitions/reference"
+                        }, 
+                        "required": true, 
+                        "type": "array"
+                    }, 
+                    "ref": {
+                        "readonly": true, 
+                        "type": "string"
+                    }, 
+                    "service_notification_options": {
+                        "default": "w,r,u,c,f", 
+                        "type": "string"
+                    }, 
+                    "servicegroups": {
+                        "altname": "service_groups", 
+                        "items": {
+                            "$ref": "#/definitions/reference"
+                        }, 
+                        "type": "array"
+                    }, 
+                    "uncommitted": {
+                        "readonly": true, 
+                        "type": "boolean"
+                    }
+                }, 
+                "type": "object"
+            }, 
+            "type": "array"
+        }, 
+        "realm": {
+            "default": "local", 
+            "type": "string"
+        }, 
+        "ref": {
+            "readonly": true, 
+            "type": "string"
+        }, 
+        "role": {
+            "$ref": "#/definitions/reference", 
+            "required": true, 
+            "type": "object"
+        }, 
+        "sharednotificationprofiles": {
+            "altname": "shared_notification_profiles", 
+            "default": [], 
+            "items": {
+                "$ref": "#/definitions/reference"
+            }, 
+            "type": "array"
+        }, 
+        "uncommitted": {
+            "readonly": true, 
+            "type": "boolean"
+        }, 
+        "variables": {
+            "items": {
+                "properties": {
+                    "name": {
+                        "required": true, 
+                        "type": "string"
+                    }, 
+                    "value": {
+                        "default": "", 
+                        "type": "string"
+                    }
+                }, 
+                "type": "object"
+            }, 
+            "type": "array"
+        }
+    }, 
+    "type": "object"
+}

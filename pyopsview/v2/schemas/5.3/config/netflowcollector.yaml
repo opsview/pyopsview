@@ -1,0 +1,31 @@
+type: object
+definitions:
+  reference:
+    type: object
+    properties:
+      name: {type: string, required: true}
+      ref: {type: string, readonly: true}
+  source:
+    type: object
+    properties:
+      active: {type: boolean, default: true}
+      collector_id: {type: number, required: true}
+      flowtype: {type: string, default: 'netflow'}
+      host_id: {type: number, required: true}
+      id: {type: number, readonly: true}
+      ip: {type: string, required: true}
+      ip_override: {type: boolean, default: false}
+      name: {type: string, required: true}
+      uncommitted: {type: boolean, readonly: true}
+
+properties:
+  id: {type: number, readonly: true}
+  monitoring_server: {$ref: '#/definition/reference', required: true}
+  name: {type: string, required: true}
+  port: {type: number, default: 9995, altname: netflow_port}
+  ref: {type: string, readonly: true}
+  sources:
+    type: array
+    items: {$ref: '#/definitions/source'}
+  sport: {type: number, default: 6343, altname: sflow_port}
+  uncommitted: {type: boolean, readonly: true}

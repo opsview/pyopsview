@@ -1,0 +1,120 @@
+{
+    "definitions": {
+        "reference": {
+            "properties": {
+                "name": {
+                    "required": true, 
+                    "type": "string"
+                }, 
+                "ref": {
+                    "readonly": true, 
+                    "type": "string"
+                }
+            }, 
+            "type": "object"
+        }
+    }, 
+    "properties": {
+        "description": {
+            "default": "", 
+            "type": "string"
+        }, 
+        "has_icon": {
+            "readonly": false, 
+            "type": "number"
+        }, 
+        "hosts": {
+            "items": {
+                "$ref": "#/definitions/reference"
+            }, 
+            "readonly": true, 
+            "type": "array"
+        }, 
+        "id": {
+            "readonly": true, 
+            "type": "number"
+        }, 
+        "managementurls": {
+            "altname": "management_urls", 
+            "default": [], 
+            "items": {
+                "properties": {
+                    "id": {
+                        "readonly": true, 
+                        "type": "number"
+                    }, 
+                    "name": {
+                        "required": true, 
+                        "type": "string"
+                    }, 
+                    "url": {
+                        "required": true, 
+                        "type": "string"
+                    }
+                }, 
+                "type": "object"
+            }, 
+            "type": "array"
+        }, 
+        "name": {
+            "required": true, 
+            "type": "string"
+        }, 
+        "ref": {
+            "readonly": true, 
+            "type": "string"
+        }, 
+        "servicechecks": {
+            "altname": "service_checks", 
+            "default": [], 
+            "items": {
+                "properties": {
+                    "event_handler": {
+                        "type": [
+                            "string", 
+                            "null"
+                        ]
+                    }, 
+                    "exception": {
+                        "type": [
+                            "string", 
+                            "null"
+                        ]
+                    }, 
+                    "name": {
+                        "required": true, 
+                        "type": "string"
+                    }, 
+                    "ref": {
+                        "readonly": true, 
+                        "type": "string"
+                    }, 
+                    "timed_exception": {
+                        "properties": {
+                            "args": {
+                                "required": true, 
+                                "type": "string"
+                            }, 
+                            "timeperiod": {
+                                "$ref": "#/definitions/reference", 
+                                "altname": "time_period", 
+                                "required": true
+                            }
+                        }, 
+                        "type": [
+                            "object", 
+                            "null"
+                        ]
+                    }
+                }, 
+                "type": "object"
+            }, 
+            "type": "array"
+        }, 
+        "uncommitted": {
+            "readonly": true, 
+            "type": "boolean"
+        }
+    }, 
+    "type": "object"
+}

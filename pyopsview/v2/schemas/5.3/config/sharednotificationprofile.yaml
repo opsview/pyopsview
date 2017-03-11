@@ -1,0 +1,43 @@
+type: object
+definitions:
+  reference:
+    type: object
+    properties:
+      name: {type: string, required: true}
+      ref: {type: string, readonly: true}
+
+properties:
+  all_hostgroups:
+    altname: all_host_groups
+    type: array
+    items: {$ref: '#/definitions/reference'}
+  all_keywords:
+    altname: all_hashtags
+    type: array
+    items: {$ref: '#/definitions/reference'}
+  all_servicegroups:
+    altname: all_service_groups
+    type: array
+    items: {$ref: '#/definitions/reference'}
+  host_notification_options:
+    type: string
+    default: d,r,f
+  hostgroups:
+    altname: host_groups
+    type: array
+    items: {$ref: '#/definitions/reference'}
+  id: {type: number, readonly: true}
+  keywords:
+    altname: hashtags
+    type: array
+    items: {$ref: '#/definitions/reference'}
+  name: {type: string, required: true}
+  notification_level: {type: number, default: 1}
+  notification_period: {$ref: '#/definitions/reference'}
+  role: {$ref: '#/definitions/reference'}
+  service_notification_options: {type: string, default: w,c,r,u,f}
+  servicegroups:
+    altname: service_groups
+    type: array
+    items: {$ref: '#/definitions/reference'}
+  uncommitted: {type: boolean, readonly: true}

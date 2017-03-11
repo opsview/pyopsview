@@ -1,0 +1,44 @@
+{
+    "definitions": {
+        "reference": {
+            "properties": {
+                "name": {
+                    "required": true, 
+                    "type": "string"
+                }, 
+                "ref": {
+                    "readonly": true, 
+                    "type": "string"
+                }
+            }, 
+            "type": "object"
+        }
+    }, 
+    "properties": {
+        "active": {
+            "type": "boolean"
+        }, 
+        "collector_id": {
+            "type": "number"
+        }, 
+        "host_id": {
+            "type": "number"
+        }, 
+        "id": {
+            "readonly": true, 
+            "type": "number"
+        }, 
+        "port": {
+            "type": "number"
+        }, 
+        "ref": {
+            "readonly": true, 
+            "type": "string"
+        }, 
+        "uncommitted": {
+            "readonly": true, 
+            "type": "boolean"
+        }
+    }, 
+    "type": "object"
+}

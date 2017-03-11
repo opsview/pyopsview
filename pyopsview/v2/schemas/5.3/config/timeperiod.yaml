@@ -1,0 +1,32 @@
+type: object
+definitions:
+  reference:
+    type: object
+    properties:
+      name: {type: string, required: true}
+      ref: {type: string, readonly: true}
+
+properties:
+  alias: {type: string, default: ""}
+  host_check_periods: 
+    type: array
+    items: {$ref: '#/definitions/reference'}
+  host_notification_periods: 
+    type: array
+    items: {$ref: '#/definitions/reference'}
+  id: {type: number, readonly: true}
+  name: {type: string, required: tue}
+  servicecheck_check_periods: 
+    type: array
+    items: {$ref: '#/definitions/reference'}
+  servicecheck_notification_periods: 
+    type: array
+    items: {$ref: '#/definitions/reference'}
+  uncommitted: {type: boolean, readonly: true}
+  monday: {type: [string, 'null']}
+  tuesday: {type: [string, 'null']}
+  wednesday: {type: [string, 'null']}
+  thursday: {type: [string, 'null']}
+  friday: {type: [string, 'null']}
+  saturday: {type: [string, 'null']} 
+  sunday: {type: [string, 'null']}

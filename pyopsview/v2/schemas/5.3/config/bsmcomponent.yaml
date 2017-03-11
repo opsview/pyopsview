@@ -1,0 +1,41 @@
+type: object
+definitions:
+  reference:
+    type: object
+    properties:
+      name:
+        type: string
+        required: true
+      ref: 
+        type: string
+        readonly: true}
+
+properties: 
+  has_icon:
+    type: number
+    readonly: true
+  host_template:
+    $ref: '#/definitions/reference'
+    required: true
+  host_template_id:
+    type: [number, 'null']
+  hosts:
+    type: array
+    items: {$ref: '#/definitions/reference'}
+    required: true
+  id:
+    type: number
+    readonly: true
+  name:
+    type: string
+    required: true
+  quorum_pct: 
+    altname: operational_zone
+    type: number
+    required: true
+  ref:
+    type: string
+    readonly: true
+  uncommitted:
+    type: boolean
+    readonly: true

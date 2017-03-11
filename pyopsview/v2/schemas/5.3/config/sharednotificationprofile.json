@@ -1,0 +1,96 @@
+{
+    "definitions": {
+        "reference": {
+            "properties": {
+                "name": {
+                    "required": true, 
+                    "type": "string"
+                }, 
+                "ref": {
+                    "readonly": true, 
+                    "type": "string"
+                }
+            }, 
+            "type": "object"
+        }
+    }, 
+    "properties": {
+        "all_hostgroups": {
+            "altname": "all_host_groups", 
+            "items": {
+                "$ref": "#/definitions/reference"
+            }, 
+            "type": "array"
+        }, 
+        "all_keywords": {
+            "altname": "all_hashtags", 
+            "items": {
+                "$ref": "#/definitions/reference"
+            }, 
+            "type": "array"
+        }, 
+        "all_servicegroups": {
+            "altname": "all_service_groups", 
+            "items": {
+                "$ref": "#/definitions/reference"
+            }, 
+            "type": "array"
+        }, 
+        "host_notification_options": {
+            "default": "d,r,f", 
+            "type": "string"
+        }, 
+        "hostgroups": {
+            "altname": "host_groups", 
+            "items": {
+                "$ref": "#/definitions/reference"
+            }, 
+            "type": "array"
+        }, 
+        "id": {
+            "readonly": true, 
+            "type": "number"
+        }, 
+        "keywords": {
+            "altname": "hashtags", 
+            "items": {
+                "$ref": "#/definitions/reference"
+            }, 
+            "type": "array"
+        }, 
+        "name": {
+            "required": true, 
+            "type": "string"
+        }, 
+        "notification_level": {
+            "default": 1, 
+            "type": "number"
+        }, 
+        "notification_period": {
+            "$ref": "#/definitions/reference"
+        }, 
+        "role": {
+            "$ref": "#/definitions/reference"
+        }, 
+        "service_notification_options": {
+            "c": null, 
+            "default": "w", 
+            "f": null, 
+            "r": null, 
+            "type": "string", 
+            "u": null
+        }, 
+        "servicegroups": {
+            "altname": "service_groups", 
+            "items": {
+                "$ref": "#/definitions/reference"
+            }, 
+            "type": "array"
+        }, 
+        "uncommitted": {
+            "readonly": true, 
+            "type": "boolean"
+        }
+    }, 
+    "type": "object"
+}
