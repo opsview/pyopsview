@@ -21,12 +21,22 @@
         "collector_id": {
             "type": "number"
         }, 
+        "flowtype": {
+            "altname": "flow_type", 
+            "required": true, 
+            "type": "string"
+        }, 
         "host_id": {
             "type": "number"
         }, 
         "id": {
             "readonly": true, 
             "type": "number"
+        }, 
+        "ip": {
+            "altname": "address", 
+            "required": true, 
+            "type": "string"
         }, 
         "port": {
             "type": "number"

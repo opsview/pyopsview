@@ -8,8 +8,7 @@ definitions:
         required: true
       ref: 
         type: string
-        readonly: true}
-
+        readonly: true
 properties: 
   has_icon:
     type: number

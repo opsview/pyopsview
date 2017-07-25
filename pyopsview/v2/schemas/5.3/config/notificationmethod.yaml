@@ -18,6 +18,11 @@ properties:
   notificationprofiles:
     type: array
     items: {$ref: '#/definitions/reference'}
+    readonly: true
+  sharednotificationprofiles:
+    type: array
+    items: {$ref: '#/definitions/reference'}
+    readonly: true
   id: {type: number, readonly: true}
   uncommitted: {type: boolean, readonly: true}
   command: {type: string}
@@ -25,3 +30,6 @@ properties:
   variables:
     type: array
     items: {$ref: '#/definitions/variable'}
+  ref:
+    type: string
+    readonly: true

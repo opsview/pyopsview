@@ -51,6 +51,14 @@
             "required": "tue", 
             "type": "string"
         }, 
+        "object_locked": {
+            "readonly": true, 
+            "type": "boolean"
+        }, 
+        "ref": {
+            "readonly": true, 
+            "type": "string"
+        }, 
         "saturday": {
             "type": [
                 "string", 

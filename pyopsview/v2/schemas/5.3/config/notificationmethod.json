@@ -52,6 +52,18 @@
             "items": {
                 "$ref": "#/definitions/reference"
             }, 
+            "readonly": true, 
+            "type": "array"
+        }, 
+        "ref": {
+            "readonly": true, 
+            "type": "string"
+        }, 
+        "sharednotificationprofiles": {
+            "items": {
+                "$ref": "#/definitions/reference"
+            }, 
+            "readonly": true, 
             "type": "array"
         }, 
         "uncommitted": {

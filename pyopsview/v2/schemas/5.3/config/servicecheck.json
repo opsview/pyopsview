@@ -51,7 +51,11 @@
             "type": "string"
         }, 
         "attribute": {
-            "type": "null"
+            "$ref": "#/definitions/reference", 
+            "type": [
+                "object", 
+                "null"
+            ]
         }, 
         "calculate_rate": {
             "default": false, 
@@ -78,7 +82,11 @@
         }, 
         "check_period": {
             "$ref": "#/definitions/reference", 
-            "default": "24x7"
+            "default": "24x7", 
+            "type": [
+                "object", 
+                "null"
+            ]
         }, 
         "checktype": {
             "$ref": "#/definitions/reference", 
@@ -86,10 +94,16 @@
             "default": "Active Plugin"
         }, 
         "critical_comparison": {
-            "type": "null"
+            "type": [
+                "string", 
+                "null"
+            ]
         }, 
         "critical_value": {
-            "type": "null"
+            "type": [
+                "string", 
+                "null"
+            ]
         }, 
         "dependencies": {
             "items": {
@@ -102,6 +116,10 @@
         }, 
         "event_handler": {
             "type": "string"
+        }, 
+        "event_handler_always_exec": {
+            "default": false, 
+            "type": "boolean"
         }, 
         "flap_detection_enabled": {
             "type": "boolean"
@@ -128,7 +146,10 @@
         }, 
         "invertresults": {
             "altname": "invert_results", 
-            "type": "boolean"
+            "type": [
+                "boolean", 
+                "null"
+            ]
         }, 
         "keywords": {
             "altname": "hashtags", 
@@ -138,7 +159,10 @@
             "type": "array"
         }, 
         "label": {
-            "type": "null"
+            "type": [
+                "string", 
+                "null"
+            ]
         }, 
         "markdown_filter": {
             "type": "boolean"
@@ -148,21 +172,37 @@
             "type": "string"
         }, 
         "notification_interval": {
-            "type": "number"
+            "type": [
+                "number", 
+                "null"
+            ]
         }, 
         "notification_options": {
-            "type": "string"
+            "type": [
+                "string", 
+                "null"
+            ]
         }, 
         "notification_period": {
-            "$ref": "#/definitions/reference", 
-            "default": "24x7"
+            "type": "null"
         }, 
         "oid": {
-            "type": "string"
+            "type": [
+                "string", 
+                "null"
+            ]
         }, 
         "plugin": {
             "$ref": "#/definitions/reference", 
-            "required": true
+            "required": true, 
+            "type": [
+                "string", 
+                "null"
+            ]
+        }, 
+        "ref": {
+            "readonly": true, 
+            "type": "string"
         }, 
         "retry_check_interval": {
             "default": 300, 
@@ -194,7 +234,11 @@
             "type": "number"
         }, 
         "stalking": {
-            "type": "boolean"
+            "type": [
+                "boolean", 
+                "string", 
+                "null"
+            ]
         }, 
         "uncommitted": {
             "readonly": true, 
@@ -204,10 +248,16 @@
             "type": "boolean"
         }, 
         "warning_comparison": {
-            "type": "null"
+            "type": [
+                "string", 
+                "null"
+            ]
         }, 
         "warning_value": {
-            "type": "null"
+            "type": [
+                "string", 
+                "null"
+            ]
         }
     }, 
     "type": "object"

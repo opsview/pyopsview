@@ -7,7 +7,7 @@
                     "type": "string"
                 }, 
                 "ref": {
-                    "readonly": "true}", 
+                    "readonly": true, 
                     "type": "string"
                 }
             }, 

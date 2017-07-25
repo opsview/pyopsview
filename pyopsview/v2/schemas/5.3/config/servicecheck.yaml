@@ -21,7 +21,9 @@ properties:
     default: 1
     type: number
   args: {required: true, type: string}
-  attribute: {type: 'null'}
+  attribute: 
+    type: [object, 'null']
+    $ref: '#/definitions/reference'
   calculate_rate:
     default: no
     type: string
@@ -38,19 +40,23 @@ properties:
     default: 300
     type: number
   check_period: 
+    type: [object, 'null']
     default: 24x7
     $ref: '#/definitions/reference'
   checktype:
     altname: check_type
     default: Active Plugin
     $ref: '#/definitions/reference'
-  critical_comparison: {type: 'null'}
-  critical_value: {type: 'null'}
+  critical_comparison: {type: ['string', 'null']}
+  critical_value: {type: [string, 'null']}
   dependencies:
     type: array
     items: {$ref: '#/definitions/reference'}
   description: {type: string}
   event_handler: {type: string}
+  event_handler_always_exec:
+    type: boolean
+    default: False
   flap_detection_enabled: {type: boolean}
   freshness_type: {type: string}
   hosts:
@@ -63,26 +69,24 @@ properties:
   id: {type: number, readonly: true}
   invertresults:
     altname: invert_results
-    type: boolean
+    type: [boolean, 'null']
   keywords:
     type: array
     altname: hashtags
     items: {$ref: '#/definitions/reference'}
-  label: {type: 'null'}
+  label: {type: [string, 'null']}
   markdown_filter: {type: boolean}
   name: 
     type: string
     required: true
-  notification_interval: {type: number}
-  notification_options: {type: string}
-  notification_period:
-    default: 24x7
-    $ref: '#/definitions/reference'
-  oid:
-    type: string
+  notification_interval: {type: [number, 'null']}
+  notification_options: {type: [string, 'null']}
+  notification_period: {type: 'null'}
+  oid: {type: [string, 'null']}
   plugin: 
     $ref: '#/definitions/reference'
     required: true
+    type: [string, 'null']
   retry_check_interval:
     type: number
     default: 300
@@ -100,8 +104,11 @@ properties:
   stale_state: {type: number}
   stale_text: {type: string}
   stale_threshold_seconds: {type: number}
-  stalking: {type: boolean}
+  stalking: {type: [boolean, string, 'null']}
   uncommitted: {type: boolean, readonly: true}
   volatile: {type: boolean}
-  warning_comparison: {type: 'null'}
-  warning_value: {type: 'null'}
+  warning_comparison: {type: [string, 'null']}
+  warning_value: {type: [string, 'null']}
+  ref:
+    type: string
+    readonly: true

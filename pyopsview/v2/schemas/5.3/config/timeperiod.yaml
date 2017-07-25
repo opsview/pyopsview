@@ -30,3 +30,9 @@ properties:
   friday: {type: [string, 'null']}
   saturday: {type: [string, 'null']} 
   sunday: {type: [string, 'null']}
+  object_locked:
+    type: boolean
+    readonly: true
+  ref:
+    type: string
+    readonly: true

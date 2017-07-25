@@ -9,16 +9,16 @@ definitions:
 properties:
   all_hostgroups:
     altname: all_host_groups
-    type: array
-    items: {$ref: '#/definitions/reference'}
+    type: boolean
+    default: False
   all_keywords:
     altname: all_hashtags
-    type: array
-    items: {$ref: '#/definitions/reference'}
+    type: boolean
+    default: False
   all_servicegroups:
     altname: all_service_groups
-    type: array
-    items: {$ref: '#/definitions/reference'}
+    type: boolean
+    default: False
   host_notification_options:
     type: string
     default: d,r,f
@@ -41,3 +41,49 @@ properties:
     type: array
     items: {$ref: '#/definitions/reference'}
   uncommitted: {type: boolean, readonly: true}
+  all_business_components: 
+    default: False
+    type: boolean
+  all_business_services:
+    default: False
+    type: boolean
+  business_component_availability_below:
+    default: 99.999
+    type: number
+  business_component_options: 
+    default: 'f,i'
+    type: string
+  business_component_renotification_interval: 
+    default: 1800
+    type: number
+  business_components:
+    type: array
+    items: {$ref: '#/definitions/reference'}
+  business_service_availability_below:
+    default: 99.999
+    type: number
+  business_service_options:
+    default: 'o,i'
+    type: string
+  business_service_renotification_interval: 
+    default: 1800
+    type: number
+  business_services: 
+    type: array
+    items: {$ref: '#/definitions/reference'}
+  include_component_notes: 
+    default: False
+    type: boolean
+  include_service_notes: 
+    default: False
+    type: boolean
+  notification_level_stop: 
+    default: 0
+    type: number
+  notificationmethods:
+    type: array
+    items: {$ref: '#/definitions/reference'}
+    altname: notification_methods
+  ref: 
+    type: string
+    readonly: True

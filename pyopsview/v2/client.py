@@ -18,7 +18,9 @@ class Client(object):
         'Content-Type': 'application/json',
     }
 
-    def __init__(self, endpoint, username=None, password=None, token=None):
+    def __init__(self, endpoint, username=None, password=None, token=None,
+                 strict=False, **request_kwds):
+
         if endpoint[-1] != '/':
             endpoint = endpoint + '/'
 
@@ -33,14 +35,14 @@ class Client(object):
             )
 
         self._version = None
-
         self.token = token
+        self._request_kwds = request_kwds
         self._username = username
         self._password = password
         self._session = requests.session()
         self._session.headers = Client.default_headers
         self._authenticate()
-        self._load_schema = self._get_schema_loader()
+        self._load_schema = self._get_schema_loader(strict)
         self._init_clients()
 
     def _init_clients(self):
@@ -52,11 +54,12 @@ class Client(object):
             self._version = self.info()['opsview_version']
         return self._version
 
-    def _get_schema_loader(self):
+    def _get_schema_loader(self, strict=False):
         """Gets a closure for schema.load_schema with the correct/current
         Opsview version
         """
-        return functools.partial(schema.load_schema, version=self.version)
+        return functools.partial(schema.load_schema, version=self.version,
+                                 strict=strict)
 
     def _authenticate(self):
         self._session.headers.pop('X-Opsview-Username', None)

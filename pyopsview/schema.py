@@ -125,9 +125,11 @@ def encode_decode_null(value):
 
 class SchemaField(object):
 
-    def __init__(self, schema):
+    def __init__(self, schema, strict_coding=False):
         if not isinstance(schema, dict):
             raise ValueError('Expected \'schema\' to be a dictionary')
+
+        self._is_strict = strict_coding
 
         definitions = schema.pop('definitions', None)
         if definitions:
@@ -302,13 +304,17 @@ class SchemaField(object):
                 else:
                     allowed_fields.append(name)
 
-            # Don't allow unknown keys for encoding
             unknown_keys = [name for name in six.iterkeys(value)
                             if name not in allowed_fields]
 
-            if unknown_keys:
+            if unknown_keys and self._is_strict:
+                # Don't allow unknown keys for encoding if strict
                 raise ValueError('Unknown fields: \'{}\''
                                  .format('\', \''.join(unknown_keys)))
+            else:
+                # Otherwise pass the values through as they were specified
+                for key in unknown_keys:
+                    encoded[key] = value[key]
 
             for (key, field) in six.iteritems(fields):
                 # Only encode if the field has a default value or the field has
@@ -329,17 +335,23 @@ class SchemaField(object):
             decoded = {}
 
             unknown_keys = [k for k in six.iterkeys(value) if k not in fields]
-            if unknown_keys:
+            if unknown_keys and self._is_strict:
                 raise ValueError('Unknown fields: \'{}\''.format(
                     '\', \''.join(unknown_keys)
                 ))
+            else:
+                for key in unknown_keys:
+                    decoded[key] = value[key]
 
             for (key, field) in six.iteritems(fields):
-                # Only decode if the field has a default value or the field has
-                # actually been specified
                 pyname = (field._altname if field._altname else key)
-                if key in value or field._default is not None:
-                    decoded[pyname] = field.decode(value.get(key))
+                # Only decode if the field has actually been specified
+                if key in value:
+                    try:
+                        decoded[pyname] = field.decode(value.get(key))
+                    except ValueError as ex:
+                        print key
+                        raise
 
             return decoded
 
@@ -365,7 +377,10 @@ class SchemaField(object):
         """The decoder for this schema.
         Tries each decoder in order of the types specified for this schema.
         """
-        if value is None and self._default is not None:
+        # Use the default value unless the field accepts None types
+        has_null_encoder = bool(encode_decode_null in self._decoders)
+
+        if value is None and self._default is not None and not has_null_encoder:
             value = self._default
 
         for decoder in self._decoders:
@@ -403,7 +418,7 @@ def _get_schema(_version, _type, name):
     raise ValueError('Failed to find schema: {}/{}'.format(_type, name))
 
 
-def load_schema(_type, name, version):
+def load_schema(_type, name, version, strict=False):
     if not name.endswith('.json'):
         name += '.json'
 
@@ -412,4 +427,4 @@ def load_schema(_type, name, version):
         schema_str = _get_schema(version, _type, name)
         _schemas_loaded[schema_hash] = json.loads(unicode(schema_str))
 
-    return SchemaField(_schemas_loaded[schema_hash])
+    return SchemaField(_schemas_loaded[schema_hash], strict_coding=strict)

@@ -6,6 +6,21 @@ definitions:
       name: {type: string, required: true}
       ref: {type: string, readonly: true}
 properties:
+  all_bsm_edit:
+    type: boolean
+    default: False
+  all_bsm_view:
+    type: boolean
+    default: False
+  all_bsm_components:
+    type: boolean
+    default: False
+  business_services:
+    type: array
+    items: {$ref: '#/definitions/reference'}
+  tenancy:
+    $ref: '#/definitions/reference'
+    type: [object, 'null']
   contacts:
     type: array
     items: {$ref: '#/definitions/reference'}
@@ -65,4 +80,7 @@ properties:
     default: false
   uncommitted:
     type: boolean
+    readonly: true
+  ref:
+    type: string
     readonly: true
