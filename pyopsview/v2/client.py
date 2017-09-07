@@ -88,7 +88,8 @@ class Client(object):
             data = json.dumps(data)
 
         response = self._session.request(url=self._url(path), method=method,
-                                         data=data, params=params)
+                                         data=data, params=params,
+                                         **self._request_kwds)
 
         if response.status_code not in expected:
             raise exc.OpsviewClientException(response.text)

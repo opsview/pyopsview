@@ -202,21 +202,17 @@
             "type": "boolean"
         }, 
         "encrypted_rancid_password": {
-            "readonly": true, 
             "type": "string"
         }, 
         "encrypted_snmp_community": {
-            "readonly": true, 
             "type": "string"
         }, 
         "encrypted_snmpv3_authpassword": {
             "altname": "encrypted_snmpv3_auth_password", 
-            "readonly": true, 
             "type": "string"
         }, 
         "encrypted_snmpv3_privpassword": {
             "altname": "encrypted_snmpv3_priv_password", 
-            "readonly": true, 
             "type": "string"
         }, 
         "event_handler": {
@@ -281,7 +277,6 @@
         }, 
         "keywords": {
             "altname": "hashtags", 
-            "default": [], 
             "items": {
                 "$ref": "#/definitions/reference"
             }, 
@@ -421,7 +416,7 @@
             "type": "string"
         }, 
         "tidy_ifdescr_level": {
-            "type": "number"
+            "type": "string"
         }, 
         "uncommitted": {
             "readonly": true, 

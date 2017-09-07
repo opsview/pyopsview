@@ -5,7 +5,6 @@
                 "host": {
                     "properties": {
                         "ip": {
-                            "required": true, 
                             "type": "string"
                         }, 
                         "name": {

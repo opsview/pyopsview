@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- encoding: UTF-8 -*-
 
-from __future__ import (unicode_literals)
+from __future__ import unicode_literals
 import six
 from pyopsview.utils import json
 
@@ -82,7 +82,7 @@ class OpsviewConfigResourceManager(OpsviewResourceManager):
             if field['default'] is not None or not field['required']:
                 keyword_arguments.append(field.get('altname', f_name))
             else:
-                required_fields.append(field.get('altname', f_name))
+                required_arguments.append(field.get('altname', f_name))
 
         return (required_arguments, keyword_arguments)
 
@@ -95,7 +95,7 @@ class OpsviewConfigResourceManager(OpsviewResourceManager):
 
         opts.update(query)
 
-        return self.list(**query)
+        return self.list(**opts)
 
     def find_one(self, params=None, **kwds):
         try:

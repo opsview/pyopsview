@@ -33,14 +33,12 @@
     }, 
     "properties": {
         "children": {
-            "default": [], 
             "items": {
                 "$ref": "#/definitions/reference"
             }, 
             "type": "array"
         }, 
         "hosts": {
-            "default": [], 
             "items": {
                 "$ref": "#/definitions/reference"
             }, 

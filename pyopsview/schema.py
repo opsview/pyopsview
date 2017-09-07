@@ -37,7 +37,7 @@ def decoder(type_name):
 @encoder('number')
 def encode_number(value):
     if value is None:
-        raise ValueError('None type is not a number')
+        return None
 
     try:
         return unicode(int(value))
@@ -55,7 +55,7 @@ def encode_number(value):
 @decoder('number')
 def decode_number(value):
     if value is None:
-        raise ValueError('None type is not a number')
+        return None
 
     try:
         return int(value)
@@ -73,7 +73,7 @@ def decode_number(value):
 @encoder('boolean')
 def encode_boolean(value):
     if value is None:
-        raise ValueError('None type is not a boolean')
+        return None
 
     if not isinstance(value, bool) and not isinstance(value, int):
         try:
@@ -87,7 +87,7 @@ def encode_boolean(value):
 @decoder('boolean')
 def decode_boolean(value):
     if value is None:
-        raise ValueError('None type is not a boolean')
+        return None
 
     if isinstance(value, bool):
         return value
@@ -110,7 +110,7 @@ def decode_boolean(value):
 @decoder('string')
 def encode_decode_string(value):
     if value is None:
-        raise ValueError('None type is not a string')
+        return None
 
     return unicode(value)
 
@@ -349,8 +349,7 @@ class SchemaField(object):
                 if key in value:
                     try:
                         decoded[pyname] = field.decode(value.get(key))
-                    except ValueError as ex:
-                        print key
+                    except ValueError:
                         raise
 
             return decoded

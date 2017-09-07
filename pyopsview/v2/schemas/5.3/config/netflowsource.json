@@ -38,6 +38,10 @@
             "required": true, 
             "type": "string"
         }, 
+        "ip_override": {
+            "default": false,
+            "type": "boolean"
+        },
         "port": {
             "type": "number"
         }, 
