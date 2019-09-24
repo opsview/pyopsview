@@ -1,0 +1,157 @@
+{
+    "definitions": {
+        "reference": {
+            "properties": {
+                "name": {
+                    "required": true, 
+                    "type": "string"
+                }, 
+                "ref": {
+                    "readonly": true, 
+                    "type": "string"
+                }
+            }, 
+            "type": "object"
+        }
+    }, 
+    "properties": {
+        "all_business_components": {
+            "default": false, 
+            "type": "boolean"
+        }, 
+        "all_business_services": {
+            "default": false, 
+            "type": "boolean"
+        }, 
+        "all_hostgroups": {
+            "altname": "all_host_groups", 
+            "default": false, 
+            "type": "boolean"
+        }, 
+        "all_keywords": {
+            "altname": "all_hashtags", 
+            "default": false, 
+            "type": "boolean"
+        }, 
+        "all_servicegroups": {
+            "altname": "all_service_groups", 
+            "default": false, 
+            "type": "boolean"
+        }, 
+        "business_component_availability_below": {
+            "default": 99.999, 
+            "type": "number"
+        }, 
+        "business_component_options": {
+            "default": "f,i", 
+            "type": "string"
+        }, 
+        "business_component_renotification_interval": {
+            "default": 1800, 
+            "type": "number"
+        }, 
+        "business_components": {
+            "items": {
+                "$ref": "#/definitions/reference"
+            }, 
+            "type": "array"
+        }, 
+        "business_service_availability_below": {
+            "default": 99.999, 
+            "type": "number"
+        }, 
+        "business_service_options": {
+            "default": "o,i", 
+            "type": "string"
+        }, 
+        "business_service_renotification_interval": {
+            "default": 1800, 
+            "type": "number"
+        }, 
+        "business_services": {
+            "items": {
+                "$ref": "#/definitions/reference"
+            }, 
+            "type": "array"
+        }, 
+        "host_notification_options": {
+            "default": "d,r,f", 
+            "type": "string"
+        }, 
+        "hostgroups": {
+            "altname": "host_groups", 
+            "items": {
+                "$ref": "#/definitions/reference"
+            }, 
+            "type": "array"
+        }, 
+        "id": {
+            "readonly": true, 
+            "type": "number"
+        }, 
+        "include_component_notes": {
+            "default": false, 
+            "type": "boolean"
+        }, 
+        "include_service_notes": {
+            "default": false, 
+            "type": "boolean"
+        }, 
+        "keywords": {
+            "altname": "hashtags", 
+            "items": {
+                "$ref": "#/definitions/reference"
+            }, 
+            "type": "array"
+        }, 
+        "name": {
+            "required": true, 
+            "type": "string"
+        }, 
+        "notification_level": {
+            "default": 1, 
+            "type": "number"
+        }, 
+        "notification_level_stop": {
+            "default": 0, 
+            "type": "number"
+        }, 
+        "notification_period": {
+            "$ref": "#/definitions/reference"
+        }, 
+        "notificationmethods": {
+            "altname": "notification_methods", 
+            "items": {
+                "$ref": "#/definitions/reference"
+            }, 
+            "type": "array"
+        }, 
+        "ref": {
+            "readonly": true, 
+            "type": "string"
+        }, 
+        "role": {
+            "$ref": "#/definitions/reference"
+        }, 
+        "service_notification_options": {
+            "c": null, 
+            "default": "w", 
+            "f": null, 
+            "r": null, 
+            "type": "string", 
+            "u": null
+        }, 
+        "servicegroups": {
+            "altname": "service_groups", 
+            "items": {
+                "$ref": "#/definitions/reference"
+            }, 
+            "type": "array"
+        }, 
+        "uncommitted": {
+            "readonly": true, 
+            "type": "boolean"
+        }
+    }, 
+    "type": "object"
+}

@@ -1,0 +1,62 @@
+{
+    "definitions": {
+        "reference": {
+            "properties": {
+                "name": {
+                    "required": true, 
+                    "type": "string"
+                }, 
+                "ref": {
+                    "readonly": true, 
+                    "type": "string"
+                }
+            }, 
+            "type": "object"
+        }
+    }, 
+    "properties": {
+        "has_icon": {
+            "readonly": true, 
+            "type": "number"
+        }, 
+        "host_template": {
+            "$ref": "#/definitions/reference", 
+            "required": true
+        }, 
+        "host_template_id": {
+            "type": [
+                "number", 
+                "null"
+            ]
+        }, 
+        "hosts": {
+            "items": {
+                "$ref": "#/definitions/reference"
+            }, 
+            "required": true, 
+            "type": "array"
+        }, 
+        "id": {
+            "readonly": true, 
+            "type": "number"
+        }, 
+        "name": {
+            "required": true, 
+            "type": "string"
+        }, 
+        "quorum_pct": {
+            "altname": "operational_zone", 
+            "required": true, 
+            "type": "number"
+        }, 
+        "ref": {
+            "readonly": true, 
+            "type": "string"
+        }, 
+        "uncommitted": {
+            "readonly": true, 
+            "type": "boolean"
+        }
+    }, 
+    "type": "object"
+}

@@ -1,0 +1,80 @@
+{
+    "definitions": {
+        "parent": {
+            "properties": {
+                "matpath": {
+                    "readonly": true, 
+                    "type": "string"
+                }, 
+                "name": {
+                    "required": true, 
+                    "type": "string"
+                }, 
+                "ref": {
+                    "readonly": true, 
+                    "type": "string"
+                }
+            }, 
+            "type": "object"
+        }, 
+        "reference": {
+            "properties": {
+                "name": {
+                    "required": true, 
+                    "type": "string"
+                }, 
+                "ref": {
+                    "readonly": true, 
+                    "type": "string"
+                }
+            }, 
+            "type": "object"
+        }
+    }, 
+    "properties": {
+        "children": {
+            "items": {
+                "$ref": "#/definitions/reference"
+            }, 
+            "type": "array"
+        }, 
+        "hosts": {
+            "items": {
+                "$ref": "#/definitions/reference"
+            }, 
+            "type": "array"
+        }, 
+        "id": {
+            "readonly": true, 
+            "type": "number"
+        }, 
+        "is_leaf": {
+            "readonly": true, 
+            "type": "boolean"
+        }, 
+        "matpath": {
+            "readonly": true, 
+            "type": "string"
+        }, 
+        "name": {
+            "required": true, 
+            "type": "string"
+        }, 
+        "parent": {
+            "$ref": "#/definitions/parent", 
+            "type": [
+                "object", 
+                "null"
+            ]
+        }, 
+        "ref": {
+            "readonly": true, 
+            "type": "string"
+        }, 
+        "uncommitted": {
+            "readonly": true, 
+            "type": "boolean"
+        }
+    }, 
+    "type": "object"
+}

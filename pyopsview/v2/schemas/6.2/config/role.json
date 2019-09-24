@@ -1,0 +1,138 @@
+{
+    "definitions": {
+        "reference": {
+            "properties": {
+                "name": {
+                    "required": true, 
+                    "type": "string"
+                }, 
+                "ref": {
+                    "readonly": true, 
+                    "type": "string"
+                }
+            }, 
+            "type": "object"
+        }
+    }, 
+    "properties": {
+        "access_hostgroups": {
+            "altname": "host_groups", 
+            "default": [], 
+            "items": {
+                "$ref": "#/definitions/reference"
+            }, 
+            "type": "array"
+        }, 
+        "access_keywords": {
+            "altname": "hashtags", 
+            "default": [], 
+            "items": {
+                "$ref": "#/definitions/reference"
+            }, 
+            "type": "array"
+        }, 
+        "access_servicegroups": {
+            "altname": "service_groups", 
+            "default": [], 
+            "items": {
+                "$ref": "#/definitions/reference"
+            }, 
+            "type": "array"
+        }, 
+        "accesses": {
+            "default": [], 
+            "items": {
+                "$ref": "#/definitions/reference"
+            }, 
+            "type": "array"
+        }, 
+        "all_bsm_components": {
+            "default": false, 
+            "type": "boolean"
+        }, 
+        "all_bsm_edit": {
+            "default": false, 
+            "type": "boolean"
+        }, 
+        "all_bsm_view": {
+            "default": false, 
+            "type": "boolean"
+        }, 
+        "all_hostgroups": {
+            "altname": "all_host_groups", 
+            "default": false, 
+            "type": "boolean"
+        }, 
+        "all_keywords": {
+            "altname": "all_hashtags", 
+            "default": false, 
+            "type": "boolean"
+        }, 
+        "all_monitoringservers": {
+            "altname": "all_monitoring_servers", 
+            "default": false, 
+            "type": "boolean"
+        }, 
+        "all_servicegroups": {
+            "altname": "all_service_groups", 
+            "default": false, 
+            "type": "boolean"
+        }, 
+        "business_services": {
+            "items": {
+                "$ref": "#/definitions/reference"
+            }, 
+            "type": "array"
+        }, 
+        "contacts": {
+            "items": {
+                "$ref": "#/definitions/reference"
+            }, 
+            "type": "array"
+        }, 
+        "description": {
+            "default": "", 
+            "type": "string"
+        }, 
+        "hostgroups": {
+            "altname": "configure_host_groups", 
+            "default": [], 
+            "items": {
+                "$ref": "#/definitions/reference"
+            }, 
+            "type": "array"
+        }, 
+        "id": {
+            "readonly": true, 
+            "type": "number"
+        }, 
+        "monitoringservers": {
+            "altname": "configure_monitoring_servers", 
+            "default": [], 
+            "items": {
+                "$ref": "#/definitions/reference"
+            }, 
+            "type": "array"
+        }, 
+        "name": {
+            "required": true, 
+            "type": "string"
+        }, 
+        "ref": {
+            "readonly": true, 
+            "type": "string"
+        }, 
+        "tenancy": {
+            "$ref": "#/definitions/reference", 
+            "type": [
+                "object", 
+                "null"
+            ]
+        }, 
+        "uncommitted": {
+            "readonly": true, 
+            "type": "boolean"
+        }
+    }, 
+    "type": "object"
+}

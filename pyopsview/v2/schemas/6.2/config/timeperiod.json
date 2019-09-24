@@ -1,0 +1,110 @@
+{
+    "definitions": {
+        "reference": {
+            "properties": {
+                "name": {
+                    "required": true, 
+                    "type": "string"
+                }, 
+                "ref": {
+                    "readonly": true, 
+                    "type": "string"
+                }
+            }, 
+            "type": "object"
+        }
+    }, 
+    "properties": {
+        "alias": {
+            "default": "", 
+            "type": "string"
+        }, 
+        "friday": {
+            "type": [
+                "string", 
+                "null"
+            ]
+        }, 
+        "host_check_periods": {
+            "items": {
+                "$ref": "#/definitions/reference"
+            }, 
+            "type": "array"
+        }, 
+        "host_notification_periods": {
+            "items": {
+                "$ref": "#/definitions/reference"
+            }, 
+            "type": "array"
+        }, 
+        "id": {
+            "readonly": true, 
+            "type": "number"
+        }, 
+        "monday": {
+            "type": [
+                "string", 
+                "null"
+            ]
+        }, 
+        "name": {
+            "required": "tue", 
+            "type": "string"
+        }, 
+        "object_locked": {
+            "readonly": true, 
+            "type": "boolean"
+        }, 
+        "ref": {
+            "readonly": true, 
+            "type": "string"
+        }, 
+        "saturday": {
+            "type": [
+                "string", 
+                "null"
+            ]
+        }, 
+        "servicecheck_check_periods": {
+            "items": {
+                "$ref": "#/definitions/reference"
+            }, 
+            "type": "array"
+        }, 
+        "servicecheck_notification_periods": {
+            "items": {
+                "$ref": "#/definitions/reference"
+            }, 
+            "type": "array"
+        }, 
+        "sunday": {
+            "type": [
+                "string", 
+                "null"
+            ]
+        }, 
+        "thursday": {
+            "type": [
+                "string", 
+                "null"
+            ]
+        }, 
+        "tuesday": {
+            "type": [
+                "string", 
+                "null"
+            ]
+        }, 
+        "uncommitted": {
+            "readonly": true, 
+            "type": "boolean"
+        }, 
+        "wednesday": {
+            "type": [
+                "string", 
+                "null"
+            ]
+        }
+    }, 
+    "type": "object"
+}

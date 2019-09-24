@@ -21,7 +21,7 @@ class Client(object):
     def __init__(self, endpoint, username=None, password=None, token=None,
                  strict=False, **request_kwds):
 
-        if endpoint[-1] != '/':
+        if not endpoint.endswith('/'):
             endpoint = endpoint + '/'
 
         if not endpoint.endswith('/rest/'):
@@ -108,8 +108,8 @@ class Client(object):
     def delete(self, url, **kwds):
         return self._request('DELETE', url, **kwds)
 
-    def reload(self, async=False):
-        params = ({'asynchronous': 1} if async else {})
+    def reload(self, asynchronous=False):
+        params = ({'asynchronous': 1} if asynchronous else {})
         return self.post('/reload', params=params)
 
     def reload_status(self):

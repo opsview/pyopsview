@@ -81,7 +81,7 @@ def encode_boolean(value):
         except ValueError:
             pass
 
-    return (unicode("1") if value else unicode("0"))
+    return unicode("1") if value else unicode("0")
 
 
 @decoder('boolean')
@@ -329,7 +329,9 @@ class SchemaField(object):
             return encoded
 
         def decode(value, fields=fields):
-            if not isinstance(value, dict):
+            if value is None:
+                return value
+            elif not isinstance(value, dict):
                 raise ValueError('Cannot decode type {} as object'
                                  .format(type(value)))
             decoded = {}

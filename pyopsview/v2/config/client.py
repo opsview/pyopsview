@@ -2,6 +2,8 @@
 
 from pyopsview.v2.config.bsmcomponents import BSMComponentManager
 from pyopsview.v2.config.bsmservices import BSMServiceManager
+from pyopsview.v2.config.clusters import ClusterManager
+from pyopsview.v2.config.collectors import CollectorManager
 from pyopsview.v2.config.flowcollectors import FlowCollectorManager
 from pyopsview.v2.config.flowsources import FlowSourceManager
 from pyopsview.v2.config.hashtags import HashTagManager
@@ -15,8 +17,7 @@ from pyopsview.v2.config.notificationmethods import NotificationMethodManager
 from pyopsview.v2.config.roles import RoleManager
 from pyopsview.v2.config.servicechecks import ServiceCheckManager
 from pyopsview.v2.config.servicegroups import ServiceGroupManager
-from pyopsview.v2.config.sharednotificationprofiles import \
-    SharedNotificationProfileManager
+from pyopsview.v2.config.sharednotificationprofiles import SharedNotificationProfileManager
 
 from pyopsview.v2.config.tenancies import TenancyManager
 from pyopsview.v2.config.timeperiods import TimePeriodManager
@@ -33,6 +34,8 @@ class ConfigClient(object):
     def _init_managers(self):
         self.bsmcomponents = BSMComponentManager(self.client)
         self.bsmservices = BSMServiceManager(self.client)
+        self.clusters = ClusterManager(self.client)
+        self.collectors = CollectorManager(self.client)
         self.flowcollectors = FlowCollectorManager(self.client)
         self.flowsources = FlowSourceManager(self.client)
         self.hashtags = HashTagManager(self.client)
@@ -46,8 +49,7 @@ class ConfigClient(object):
         self.roles = RoleManager(self.client)
         self.servicechecks = ServiceCheckManager(self.client)
         self.servicegroups = ServiceGroupManager(self.client)
-        self.sharednotificationprofiles = \
-            SharedNotificationProfileManager(self.client)
+        self.sharednotificationprofiles = SharedNotificationProfileManager(self.client)
         self.tenancies = TenancyManager(self.client)
         self.timeperiods = TimePeriodManager(self.client)
         self.users = UserManager(self.client)

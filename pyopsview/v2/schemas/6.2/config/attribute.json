@@ -1,0 +1,110 @@
+{
+    "definitions": {
+        "reference": {
+            "properties": {
+                "name": {
+                    "required": true, 
+                    "type": "string"
+                }, 
+                "ref": {
+                    "readonly": true, 
+                    "type": "string"
+                }
+            }, 
+            "type": "object"
+        }
+    }, 
+    "properties": {
+        "arg1": {
+            "altname": "arg1_name", 
+            "default": "", 
+            "type": "string"
+        }, 
+        "arg2": {
+            "altname": "arg2_name", 
+            "default": "", 
+            "type": "string"
+        }, 
+        "arg3": {
+            "altname": "arg3_name", 
+            "default": "", 
+            "type": "string"
+        }, 
+        "arg4": {
+            "altname": "arg4_name", 
+            "default": "", 
+            "type": "string"
+        }, 
+        "id": {
+            "readonly": true, 
+            "type": "number"
+        }, 
+        "label1": {
+            "altname": "arg1_label", 
+            "default": "", 
+            "type": "string"
+        }, 
+        "label2": {
+            "altname": "arg2_label", 
+            "default": "", 
+            "type": "string"
+        }, 
+        "label3": {
+            "altname": "arg3_label", 
+            "default": "", 
+            "type": "string"
+        }, 
+        "label4": {
+            "altname": "arg4_label", 
+            "default": "", 
+            "type": "string"
+        }, 
+        "name": {
+            "required": true, 
+            "type": "string"
+        }, 
+        "ref": {
+            "readonly": true, 
+            "type": "string"
+        }, 
+        "secured1": {
+            "altname": "arg1_secured", 
+            "default": false, 
+            "type": "boolean"
+        }, 
+        "secured2": {
+            "altname": "arg2_secured", 
+            "default": false, 
+            "type": "boolean"
+        }, 
+        "secured3": {
+            "altname": "arg3_secured", 
+            "default": false, 
+            "type": "boolean"
+        }, 
+        "secured4": {
+            "altname": "arg4_secured", 
+            "default": false, 
+            "type": "boolean"
+        }, 
+        "servicechecks": {
+            "altname": "service_checks", 
+            "default": [], 
+            "items": {
+                "$ref": "#/definitions/reference"
+            }, 
+            "readonly": true, 
+            "type": "array"
+        }, 
+        "uncommitted": {
+            "readonly": true, 
+            "type": "boolean"
+        }, 
+        "value": {
+            "altname": "default_value", 
+            "default": "", 
+            "type": "string"
+        }
+    }, 
+    "type": "object"
+}
