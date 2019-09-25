@@ -21,14 +21,6 @@
             },
             "type": "array"
         },
-
-        "collectors": {
-            "items": {
-                "$ref": "#/definitions/reference"
-            },
-            "type": "array"
-        },
-
         "activated": {
             "type": "boolean"
         },

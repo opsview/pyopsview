@@ -58,14 +58,3 @@ def version_cmp(version_a, version_b):
     i_b = b[0] * 100 + b[1] * 10 + b[0] * 1
 
     return i_a - i_b
-
-
-if __name__ == '__main__':
-    from pyopsview import OpsviewClient
-
-    client = OpsviewClient(endpoint='http://ov-uat5.opsview.com',
-                           username='admin',
-                           password='initial')
-
-    for host in client.config.hosts.list():
-        print host['name']

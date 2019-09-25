@@ -13,7 +13,6 @@ class CollectorManager(OpsviewResourceManager):
     schema_name = 'collector'
 
     def register(self, id, collector_name):
-        print("Registering ID {} as {}".format(id, collector_name))
         uri = '{}/{}'.format(self.resource_uri, id)
         request = {"name": collector_name}
         self._update(uri, body=request)

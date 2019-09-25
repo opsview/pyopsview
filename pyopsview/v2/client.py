@@ -108,8 +108,13 @@ class Client(object):
     def delete(self, url, **kwds):
         return self._request('DELETE', url, **kwds)
 
-    def reload(self, asynchronous=False):
-        params = ({'asynchronous': 1} if asynchronous else {})
+    def reload(self, asynchronous=False, **kwargs):
+        # async is now a reserved keyword from Python 3.7 but still
+        # check for it in kwargs for older code.
+        if asynchronous or kwargs.get("async", False):
+            params = {'asynchronous': 1}
+        else:
+            params = {}
         return self.post('/reload', params=params)
 
     def reload_status(self):
