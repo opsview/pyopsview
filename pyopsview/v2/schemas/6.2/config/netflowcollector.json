@@ -1,0 +1,97 @@
+{
+    "definitions": {
+        "reference": {
+            "properties": {
+                "name": {
+                    "required": true, 
+                    "type": "string"
+                }, 
+                "ref": {
+                    "readonly": true, 
+                    "type": "string"
+                }
+            }, 
+            "type": "object"
+        }, 
+        "source": {
+            "properties": {
+                "active": {
+                    "default": true, 
+                    "type": "boolean"
+                }, 
+                "collector_id": {
+                    "required": true, 
+                    "type": "number"
+                }, 
+                "flowtype": {
+                    "default": "netflow", 
+                    "type": "string"
+                }, 
+                "host_id": {
+                    "required": true, 
+                    "type": "number"
+                }, 
+                "id": {
+                    "readonly": true, 
+                    "type": "number"
+                }, 
+                "ip": {
+                    "required": true, 
+                    "type": "string"
+                }, 
+                "ip_override": {
+                    "default": false, 
+                    "type": "boolean"
+                }, 
+                "name": {
+                    "required": true, 
+                    "type": "string"
+                }, 
+                "uncommitted": {
+                    "readonly": true, 
+                    "type": "boolean"
+                }
+            }, 
+            "type": "object"
+        }
+    }, 
+    "properties": {
+        "id": {
+            "readonly": true, 
+            "type": "number"
+        }, 
+        "monitoring_server": {
+            "$ref": "#/definition/reference", 
+            "required": true
+        }, 
+        "name": {
+            "required": true, 
+            "type": "string"
+        }, 
+        "port": {
+            "altname": "netflow_port", 
+            "default": 9995, 
+            "type": "number"
+        }, 
+        "ref": {
+            "readonly": true, 
+            "type": "string"
+        }, 
+        "sources": {
+            "items": {
+                "$ref": "#/definitions/source"
+            }, 
+            "type": "array"
+        }, 
+        "sport": {
+            "altname": "sflow_port", 
+            "default": 6343, 
+            "type": "number"
+        }, 
+        "uncommitted": {
+            "readonly": true, 
+            "type": "boolean"
+        }
+    }, 
+    "type": "object"
+}

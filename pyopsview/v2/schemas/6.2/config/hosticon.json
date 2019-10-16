@@ -1,0 +1,18 @@
+{
+    "properties": {
+        "img_prefix": {
+            "altname": "image_prefix", 
+            "required": true, 
+            "type": "string"
+        }, 
+        "name": {
+            "required": true, 
+            "type": "string"
+        }, 
+        "ref": {
+            "readonly": true, 
+            "type": "string"
+        }
+    }, 
+    "type": "object"
+}

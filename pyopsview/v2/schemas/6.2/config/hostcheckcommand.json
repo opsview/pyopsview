@@ -1,0 +1,55 @@
+{
+    "definitions": {
+        "reference": {
+            "properties": {
+                "name": {
+                    "required": true, 
+                    "type": "string"
+                }, 
+                "ref": {
+                    "readonly": true, 
+                    "type": "string"
+                }
+            }, 
+            "type": "object"
+        }
+    }, 
+    "properties": {
+        "args": {
+            "required": true, 
+            "type": "string"
+        }, 
+        "hosts": {
+            "items": {
+                "$ref": "#/definitions/reference"
+            }, 
+            "readonly": true, 
+            "type": "array"
+        }, 
+        "id": {
+            "readonly": true, 
+            "type": "number"
+        }, 
+        "name": {
+            "required": true, 
+            "type": "string"
+        }, 
+        "plugin": {
+            "$ref": "#/definitions/reference", 
+            "required": true
+        }, 
+        "priority": {
+            "readonly": true, 
+            "type": "number"
+        }, 
+        "ref": {
+            "readonly": true, 
+            "type": "string"
+        }, 
+        "uncommitted": {
+            "readonly": true, 
+            "type": "boolean"
+        }
+    }, 
+    "type": "object"
+}

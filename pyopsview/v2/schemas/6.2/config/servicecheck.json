@@ -1,0 +1,264 @@
+{
+    "definitions": {
+        "reference": {
+            "properties": {
+                "name": {
+                    "required": true, 
+                    "type": "string"
+                }, 
+                "ref": {
+                    "readonly": true, 
+                    "type": "string"
+                }
+            }, 
+            "type": "object"
+        }, 
+        "snmptraprule": {
+            "properties": {
+                "alertlevel": {
+                    "type": "number"
+                }, 
+                "code": {
+                    "type": "string"
+                }, 
+                "message": {
+                    "type": "string"
+                }, 
+                "name": {
+                    "type": "string"
+                }, 
+                "process": {
+                    "type": "boolean"
+                }, 
+                "ref": {
+                    "type": "string"
+                }, 
+                "uncommitted": {
+                    "readonly": true, 
+                    "type": "boolean"
+                }
+            }, 
+            "type": "object"
+        }
+    }, 
+    "properties": {
+        "alert_from_failure": {
+            "default": 1, 
+            "type": "number"
+        }, 
+        "args": {
+            "required": true, 
+            "type": "string"
+        }, 
+        "attribute": {
+            "$ref": "#/definitions/reference", 
+            "type": [
+                "object", 
+                "null"
+            ]
+        }, 
+        "calculate_rate": {
+            "default": false, 
+            "type": "string"
+        }, 
+        "cascaded_from": {
+            "$ref": "#/definitions/reference", 
+            "type": [
+                "object", 
+                "null"
+            ]
+        }, 
+        "check_attempts": {
+            "default": 1, 
+            "type": "number"
+        }, 
+        "check_freshness": {
+            "default": true, 
+            "type": "boolean"
+        }, 
+        "check_interval": {
+            "default": 300, 
+            "type": "number"
+        }, 
+        "check_period": {
+            "$ref": "#/definitions/reference", 
+            "default": "24x7", 
+            "type": [
+                "object", 
+                "null"
+            ]
+        }, 
+        "checktype": {
+            "$ref": "#/definitions/reference", 
+            "altname": "check_type", 
+            "default": "Active Plugin"
+        }, 
+        "critical_comparison": {
+            "type": [
+                "string", 
+                "null"
+            ]
+        }, 
+        "critical_value": {
+            "type": [
+                "string", 
+                "null"
+            ]
+        }, 
+        "dependencies": {
+            "items": {
+                "$ref": "#/definitions/reference"
+            }, 
+            "type": "array"
+        }, 
+        "description": {
+            "type": "string"
+        }, 
+        "event_handler": {
+            "type": "string"
+        }, 
+        "event_handler_always_exec": {
+            "default": false, 
+            "type": "boolean"
+        }, 
+        "flap_detection_enabled": {
+            "type": "boolean"
+        }, 
+        "freshness_type": {
+            "type": "string"
+        }, 
+        "hosts": {
+            "items": {
+                "$ref": "#/definitions/reference"
+            }, 
+            "type": "array"
+        }, 
+        "hosttemplates": {
+            "altname": "host_templates", 
+            "items": {
+                "$ref": "#/definitions/reference"
+            }, 
+            "type": "array"
+        }, 
+        "id": {
+            "readonly": true, 
+            "type": "number"
+        }, 
+        "invertresults": {
+            "altname": "invert_results", 
+            "type": [
+                "boolean", 
+                "null"
+            ]
+        }, 
+        "keywords": {
+            "altname": "hashtags", 
+            "items": {
+                "$ref": "#/definitions/reference"
+            }, 
+            "type": "array"
+        }, 
+        "label": {
+            "type": [
+                "string", 
+                "null"
+            ]
+        }, 
+        "markdown_filter": {
+            "type": "boolean"
+        }, 
+        "name": {
+            "required": true, 
+            "type": "string"
+        }, 
+        "notification_interval": {
+            "type": [
+                "number", 
+                "null"
+            ]
+        }, 
+        "notification_options": {
+            "type": [
+                "string", 
+                "null"
+            ]
+        }, 
+        "notification_period": {
+            "type": "null"
+        }, 
+        "oid": {
+            "type": [
+                "string", 
+                "null"
+            ]
+        }, 
+        "plugin": {
+            "$ref": "#/definitions/reference", 
+            "required": true, 
+            "type": [
+                "string", 
+                "null"
+            ]
+        }, 
+        "ref": {
+            "readonly": true, 
+            "type": "string"
+        }, 
+        "retry_check_interval": {
+            "default": 300, 
+            "type": "number"
+        }, 
+        "sensitive_arguments": {
+            "default": false, 
+            "type": "boolean"
+        }, 
+        "servicegroup": {
+            "$ref": "#/definitions/reference", 
+            "altname": "service_group", 
+            "required": true
+        }, 
+        "snmptraprules": {
+            "altname": "snmp_trap_rules", 
+            "items": {
+                "$ref": "#/definitions/snmptraprule"
+            }, 
+            "type": "array"
+        }, 
+        "stale_state": {
+            "type": "number"
+        }, 
+        "stale_text": {
+            "type": "string"
+        }, 
+        "stale_threshold_seconds": {
+            "type": "number"
+        }, 
+        "stalking": {
+            "type": [
+                "boolean", 
+                "string", 
+                "null"
+            ]
+        }, 
+        "uncommitted": {
+            "readonly": true, 
+            "type": "boolean"
+        }, 
+        "volatile": {
+            "type": "boolean"
+        }, 
+        "warning_comparison": {
+            "type": [
+                "string", 
+                "null"
+            ]
+        }, 
+        "warning_value": {
+            "type": [
+                "string", 
+                "null"
+            ]
+        }
+    }, 
+    "type": "object"
+}

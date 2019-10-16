@@ -1,0 +1,86 @@
+{
+	"definitions": {
+		"reference": {
+			"properties": {
+				"name": {
+					"required": true,
+					"type": "string"
+				},
+				"ref": {
+					"readonly": true,
+					"type": "string"
+				}
+			},
+			"type": "object"
+		}
+	},
+	"properties": {
+		"uncommitted": {
+			"type": "boolean"
+		},
+		"name": {
+			"required": true,
+			"type": "string"
+		},
+		"ip": {
+			"required": true,
+			"type": "string"
+		},
+		"hostname": {
+			"required": true,
+			"type": "string"
+		},
+		"os": {
+			"required": true,
+			"type": "string"
+		},
+		"host": {
+			"properties": {
+				"ref": {
+					"type": "string"
+				},
+				"name": {
+					"type": "string"
+				}
+			},
+			"type": "object"
+		},
+		"collector_ref": {
+			"required": true,
+			"type": "string"
+		},
+		"version": {
+			"required": true,
+			"type": "string"
+		},
+		"monitoringcluster": {
+			"altname": "monitoring_cluster",
+			"properties": {
+				"ref": {
+					"type": "string"
+				},
+				"name": {
+					"type": "string"
+				}
+			},
+			"type": "object"
+		},
+		"active": {
+			"required": true,
+			"type": "boolean"
+		},
+		"last_heartbeat": {
+			"default": "local",
+			"type": "number"
+		},
+		"ref": {
+			"readonly": true,
+			"type": "string"
+		},
+		"id": {
+			"required": true,
+			"type": "string"
+		}
+	},
+	"type": "object"
+}

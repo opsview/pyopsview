@@ -1,0 +1,97 @@
+{
+    "definitions": {
+        "reference": {
+            "properties": {
+                "name": {
+                    "required": true, 
+                    "type": "string"
+                }, 
+                "ref": {
+                    "readonly": true, 
+                    "type": "string"
+                }
+            }, 
+            "type": "object"
+        }
+    }, 
+    "properties": {
+        "all_hosts": {
+            "default": false, 
+            "type": "boolean"
+        }, 
+        "all_servicechecks": {
+            "altname": "all_service_checks", 
+            "default": false, 
+            "type": "boolean"
+        }, 
+        "calculate_hard_states": {
+            "default": false, 
+            "type": "boolean"
+        }, 
+        "description": {
+            "default": "", 
+            "type": "string"
+        }, 
+        "enabled": {
+            "default": true, 
+            "type": "boolean"
+        }, 
+        "exclude_handled": {
+            "default": false, 
+            "type": "boolean"
+        }, 
+        "hosts": {
+            "default": [], 
+            "items": {
+                "$ref": "#/definitions/reference"
+            }, 
+            "type": "array"
+        }, 
+        "id": {
+            "readonly": true, 
+            "type": "number"
+        }, 
+        "name": {
+            "required": true, 
+            "type": "string"
+        }, 
+        "public": {
+            "default": false, 
+            "type": "boolean"
+        }, 
+        "ref": {
+            "readonly": true, 
+            "type": "string"
+        }, 
+        "roles": {
+            "items": {
+                "$ref": "#/definitions/reference"
+            }, 
+            "readonly": true, 
+            "type": "array"
+        }, 
+        "servicechecks": {
+            "altname": "service_checks", 
+            "default": [], 
+            "items": {
+                "$ref": "#/definitions/reference"
+            }, 
+            "type": "array"
+        }, 
+        "show_contextual_menus": {
+            "default": true, 
+            "type": "boolean"
+        }, 
+        "style": {
+            "type": [
+                "string", 
+                "null"
+            ]
+        }, 
+        "uncommitted": {
+            "readonly": true, 
+            "type": "boolean"
+        }
+    }, 
+    "type": "object"
+}

@@ -1,0 +1,55 @@
+{
+    "definitions": {
+        "reference": {
+            "properties": {
+                "name": {
+                    "required": true,
+                    "type": "string"
+                },
+                "ref": {
+                    "readonly": true,
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    },
+    "properties": {
+        "monitors": {
+            "items": {
+                "$ref": "#/definitions/reference"
+            },
+            "type": "array"
+        },
+        "activated": {
+            "type": "boolean"
+        },
+        "active_host_checks_enabled": {
+            "type": "boolean"
+        },
+        "passive": {
+            "type": "boolean"
+        },
+        "uncommitted": {
+            "type": "boolean"
+        },
+        "event_handlers_enabled": {
+            "type": "boolean"
+        },
+        "active_service_checks_enabled": {
+            "type": "boolean"
+        },
+        "ref": {
+            "readonly": true,
+            "type": "string"
+        },
+        "id": {
+            "readonly": true,
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}

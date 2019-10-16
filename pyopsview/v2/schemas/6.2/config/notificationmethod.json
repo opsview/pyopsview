@@ -1,0 +1,81 @@
+{
+    "definitions": {
+        "reference": {
+            "properties": {
+                "name": {
+                    "required": true, 
+                    "type": "string"
+                }, 
+                "ref": {
+                    "readonly": true, 
+                    "type": "string"
+                }
+            }, 
+            "type": "object"
+        }, 
+        "variable": {
+            "properties": {
+                "name": {
+                    "type": "string"
+                }, 
+                "value": {
+                    "type": "string"
+                }
+            }, 
+            "type": "object"
+        }
+    }, 
+    "properties": {
+        "active": {
+            "type": "boolean"
+        }, 
+        "command": {
+            "type": "string"
+        }, 
+        "contact_variables": {
+            "type": "string"
+        }, 
+        "id": {
+            "readonly": true, 
+            "type": "number"
+        }, 
+        "master": {
+            "type": "boolean"
+        }, 
+        "name": {
+            "type": "string"
+        }, 
+        "namespace": {
+            "type": "string"
+        }, 
+        "notificationprofiles": {
+            "items": {
+                "$ref": "#/definitions/reference"
+            }, 
+            "readonly": true, 
+            "type": "array"
+        }, 
+        "ref": {
+            "readonly": true, 
+            "type": "string"
+        }, 
+        "sharednotificationprofiles": {
+            "items": {
+                "$ref": "#/definitions/reference"
+            }, 
+            "readonly": true, 
+            "type": "array"
+        }, 
+        "uncommitted": {
+            "readonly": true, 
+            "type": "boolean"
+        }, 
+        "variables": {
+            "items": {
+                "$ref": "#/definitions/variable"
+            }, 
+            "type": "array"
+        }
+    }, 
+    "type": "object"
+}

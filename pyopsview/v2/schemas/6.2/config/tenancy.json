@@ -1,0 +1,43 @@
+{
+    "type": "object",
+    "definitions": {
+        "reference": {
+            "properties": {
+                "name": {
+                    "required": true, 
+                    "type": "string"
+                }, 
+                "ref": {
+                    "readonly": true, 
+                    "type": "string"
+                }
+            }, 
+            "type": "object"
+        }
+    }, 
+    "properties": {
+        "description": {
+            "type": "string"
+        }, 
+        "id": {
+            "readonly": true, 
+            "type": "number"
+        }, 
+        "name": {
+            "required": true, 
+            "type": "string"
+        }, 
+        "primary_role": {
+            "$ref": "#/definitions/reference", 
+            "required": true
+        }, 
+        "priority": {
+            "readonly": true, 
+            "type": "number"
+        }, 
+        "ref": {
+            "readonly": true, 
+            "type": "string"
+        }
+    }
+}

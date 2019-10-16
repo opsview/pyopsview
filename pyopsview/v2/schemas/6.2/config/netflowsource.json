@@ -1,0 +1,58 @@
+{
+    "definitions": {
+        "reference": {
+            "properties": {
+                "name": {
+                    "required": true, 
+                    "type": "string"
+                }, 
+                "ref": {
+                    "readonly": true, 
+                    "type": "string"
+                }
+            }, 
+            "type": "object"
+        }
+    }, 
+    "properties": {
+        "active": {
+            "type": "boolean"
+        }, 
+        "collector_id": {
+            "type": "number"
+        }, 
+        "flowtype": {
+            "altname": "flow_type", 
+            "required": true, 
+            "type": "string"
+        }, 
+        "host_id": {
+            "type": "number"
+        }, 
+        "id": {
+            "readonly": true, 
+            "type": "number"
+        }, 
+        "ip": {
+            "altname": "address", 
+            "required": true, 
+            "type": "string"
+        }, 
+        "ip_override": {
+            "default": false,
+            "type": "boolean"
+        },
+        "port": {
+            "type": "number"
+        }, 
+        "ref": {
+            "readonly": true, 
+            "type": "string"
+        }, 
+        "uncommitted": {
+            "readonly": true, 
+            "type": "boolean"
+        }
+    }, 
+    "type": "object"
+}

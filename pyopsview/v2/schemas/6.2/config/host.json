@@ -1,0 +1,436 @@
+{
+    "definitions": {
+        "hostattribute": {
+            "properties": {
+                "arg1": {
+                    "type": [
+                        "string", 
+                        "null"
+                    ]
+                }, 
+                "arg2": {
+                    "type": [
+                        "string", 
+                        "null"
+                    ]
+                }, 
+                "arg3": {
+                    "type": [
+                        "string", 
+                        "null"
+                    ]
+                }, 
+                "arg4": {
+                    "type": [
+                        "string", 
+                        "null"
+                    ]
+                }, 
+                "encrypted_arg1": {
+                    "type": "string"
+                }, 
+                "encrypted_arg2": {
+                    "type": "string"
+                }, 
+                "encrypted_arg3": {
+                    "type": "string"
+                }, 
+                "encrypted_arg4": {
+                    "type": "string"
+                }, 
+                "id": {
+                    "readonly": true, 
+                    "type": "number"
+                }, 
+                "name": {
+                    "type": "string"
+                }, 
+                "value": {
+                    "type": "string"
+                }
+            }, 
+            "type": "object"
+        }, 
+        "icon": {
+            "properties": {
+                "name": {
+                    "type": "string"
+                }, 
+                "path": {
+                    "type": "string"
+                }
+            }, 
+            "type": "object"
+        }, 
+        "reference": {
+            "properties": {
+                "name": {
+                    "required": true, 
+                    "type": "string"
+                }, 
+                "ref": {
+                    "readonly": true, 
+                    "type": "string"
+                }
+            }, 
+            "type": [
+                "object", 
+                "null"
+            ]
+        }, 
+        "servicecheck": {
+            "properties": {
+                "event_handler": {
+                    "type": [
+                        "string", 
+                        "null"
+                    ]
+                }, 
+                "exception": {
+                    "type": [
+                        "string", 
+                        "null"
+                    ]
+                }, 
+                "name": {
+                    "required": true, 
+                    "type": "string"
+                }, 
+                "ref": {
+                    "readonly": true, 
+                    "type": "string"
+                }, 
+                "remove_servicecheck": {
+                    "altname": "remove_service_check", 
+                    "default": false, 
+                    "type": "boolean"
+                }, 
+                "timed_exception": {
+                    "properties": {
+                        "args": {
+                            "type": "string"
+                        }, 
+                        "timeperiod": {
+                            "$ref": "#/definitions/reference", 
+                            "required": true
+                        }
+                    }, 
+                    "type": [
+                        "object", 
+                        "null"
+                    ]
+                }
+            }, 
+            "type": "object"
+        }, 
+        "snmpinterface": {
+            "properties": {
+                "active": {
+                    "type": "boolean"
+                }, 
+                "discards_critical": {
+                    "type": "number"
+                }, 
+                "discards_warning": {
+                    "type": "number"
+                }, 
+                "duplicatename": {
+                    "altname": "duplicate_name", 
+                    "type": "boolean"
+                }, 
+                "errors_critical": {
+                    "type": "number"
+                }, 
+                "errors_warning": {
+                    "type": "number"
+                }, 
+                "indexid": {
+                    "altname": "index_id", 
+                    "type": "number"
+                }, 
+                "interfacename": {
+                    "altname": "interface_name", 
+                    "type": "string"
+                }, 
+                "throughput_critical": {
+                    "type": "string"
+                }, 
+                "throughput_warning": {
+                    "type": "string"
+                }
+            }, 
+            "type": "object"
+        }
+    }, 
+    "properties": {
+        "alias": {
+            "default": "", 
+            "type": "string"
+        }, 
+        "business_components": {
+            "items": {
+                "$ref": "#/definitions/reference"
+            }, 
+            "type": "array"
+        }, 
+        "check_attempts": {
+            "default": 2, 
+            "type": "number"
+        }, 
+        "check_command": {
+            "$ref": "#/definitions/reference", 
+            "default": {
+                "name": "ping"
+            }
+        }, 
+        "check_interval": {
+            "default": 600, 
+            "type": "number"
+        }, 
+        "check_period": {
+            "$ref": "#/definitions/reference", 
+            "default": {
+                "name": "24x7"
+            }
+        }, 
+        "description": {
+            "default": "", 
+            "type": "string"
+        }, 
+        "enable_snmp": {
+            "default": false, 
+            "type": "boolean"
+        }, 
+        "encrypted_rancid_password": {
+            "type": "string"
+        }, 
+        "encrypted_snmp_community": {
+            "type": "string"
+        }, 
+        "encrypted_snmpv3_authpassword": {
+            "altname": "encrypted_snmpv3_auth_password", 
+            "type": "string"
+        }, 
+        "encrypted_snmpv3_privpassword": {
+            "altname": "encrypted_snmpv3_priv_password", 
+            "type": "string"
+        }, 
+        "event_handler": {
+            "default": "", 
+            "type": "string"
+        }, 
+        "event_handler_always_exec": {
+            "default": false, 
+            "type": "boolean"
+        }, 
+        "flap_detection_enabled": {
+            "default": true, 
+            "type": "boolean"
+        }, 
+        "hostattributes": {
+            "altname": "variables", 
+            "default": [], 
+            "items": {
+                "$ref": "#/definitions/hostattribute"
+            }, 
+            "type": "array"
+        }, 
+        "hostgroup": {
+            "$ref": "#/definitions/reference", 
+            "altname": "host_group", 
+            "required": true
+        }, 
+        "hosttemplates": {
+            "altname": "host_templates", 
+            "default": [], 
+            "items": {
+                "$ref": "#/definitions/reference"
+            }, 
+            "type": "array"
+        }, 
+        "icon": {
+            "$ref": "#/definitions/icon", 
+            "default": {
+                "name": "LOGO - Opsview"
+            }
+        }, 
+        "id": {
+            "readonly": true, 
+            "type": "number"
+        }, 
+        "ip": {
+            "altname": "address", 
+            "required": true, 
+            "type": "string"
+        }, 
+        "is_master": {
+            "readonly": true, 
+            "type": "boolean"
+        }, 
+        "is_ms": {
+            "readonly": true, 
+            "type": "boolean"
+        }, 
+        "is_netflow": {
+            "readonly": true, 
+            "type": "boolean"
+        }, 
+        "keywords": {
+            "altname": "hashtags", 
+            "items": {
+                "$ref": "#/definitions/reference"
+            }, 
+            "type": "array"
+        }, 
+        "last_updated": {
+            "readonly": true, 
+            "type": "number"
+        }, 
+        "monitored_by": {
+            "$ref": "#/definitions/reference", 
+            "required": true
+        }, 
+        "name": {
+            "required": true, 
+            "type": "string"
+        }, 
+        "nmis_node_type": {
+            "type": "string"
+        }, 
+        "notification_interval": {
+            "default": 3600, 
+            "type": "number"
+        }, 
+        "notification_options": {
+            "default": "u,d,r", 
+            "type": "string"
+        }, 
+        "notification_period": {
+            "$ref": "#/definitions/reference", 
+            "default": {
+                "name": "24x7"
+            }
+        }, 
+        "other_addresses": {
+            "default": "", 
+            "type": "string"
+        }, 
+        "parents": {
+            "default": [], 
+            "items": {
+                "$ref": "#/definitions/reference"
+            }, 
+            "type": "array"
+        }, 
+        "rancid_autoenable": {
+            "altname": "rancid_auto_enable", 
+            "default": false, 
+            "type": "boolean"
+        }, 
+        "rancid_connection_type": {
+            "type": "string"
+        }, 
+        "rancid_password": {
+            "type": "string"
+        }, 
+        "rancid_username": {
+            "type": [
+                "string", 
+                "null"
+            ]
+        }, 
+        "rancid_vendor": {
+            "$ref": "#/definitions/reference"
+        }, 
+        "ref": {
+            "type": "string"
+        }, 
+        "retry_check_interval": {
+            "default": 60, 
+            "type": "number"
+        }, 
+        "servicechecks": {
+            "altname": "service_checks", 
+            "items": {
+                "$ref": "#/definitions/servicecheck"
+            }, 
+            "type": "array"
+        }, 
+        "snmp_community": {
+            "type": "string"
+        }, 
+        "snmp_extended_throughput_data": {
+            "default": false, 
+            "type": "boolean"
+        }, 
+        "snmp_max_msg_size": {
+            "default": 0, 
+            "type": "number"
+        }, 
+        "snmp_port": {
+            "default": 161, 
+            "type": "number"
+        }, 
+        "snmp_use_getnext": {
+            "default": false, 
+            "type": "boolean"
+        }, 
+        "snmp_use_ifname": {
+            "default": false, 
+            "type": "boolean"
+        }, 
+        "snmp_version": {
+            "default": "2c", 
+            "type": "string"
+        }, 
+        "snmpinterfaces": {
+            "altname": "snmp_interfaces", 
+            "items": {
+                "$ref": "#/definitions/snmpinterface"
+            }, 
+            "type": "array"
+        }, 
+        "snmpv3_authpassword": {
+            "altname": "snmpv3_auth_password", 
+            "type": "string"
+        }, 
+        "snmpv3_authprotocol": {
+            "altname": "snmpv3_auth_protocol", 
+            "type": [
+                "string", 
+                "null"
+            ]
+        }, 
+        "snmpv3_privpassword": {
+            "altname": "snmpv3_priv_password", 
+            "type": "string"
+        }, 
+        "snmpv3_privprotocol": {
+            "altname": "snmpv3_priv_protocol", 
+            "type": [
+                "string", 
+                "null"
+            ]
+        }, 
+        "snmpv3_username": {
+            "type": "string"
+        }, 
+        "tidy_ifdescr_level": {
+            "type": "string"
+        }, 
+        "uncommitted": {
+            "readonly": true, 
+            "type": "boolean"
+        }, 
+        "use_mrtg": {
+            "type": "boolean"
+        }, 
+        "use_nmis": {
+            "type": "boolean"
+        }, 
+        "use_rancid": {
+            "type": "boolean"
+        }
+    }, 
+    "type": "object"
+}

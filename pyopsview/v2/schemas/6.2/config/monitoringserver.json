@@ -1,0 +1,92 @@
+{
+    "definitions": {
+        "node": {
+            "properties": {
+                "host": {
+                    "properties": {
+                        "ip": {
+                            "type": "string"
+                        }, 
+                        "name": {
+                            "type": "string"
+                        }, 
+                        "ref": {
+                            "readonly": true, 
+                            "type": "string"
+                        }
+                    }, 
+                    "type": "object"
+                }, 
+                "slave_port": {
+                    "readonly": true, 
+                    "type": "number"
+                }
+            }, 
+            "type": "object"
+        }, 
+        "reference": {
+            "properties": {
+                "name": {
+                    "required": true, 
+                    "type": "string"
+                }, 
+                "ref": {
+                    "readonly": true, 
+                    "type": "string"
+                }
+            }, 
+            "type": "object"
+        }
+    }, 
+    "properties": {
+        "activated": {
+            "default": true, 
+            "type": "boolean"
+        }, 
+        "id": {
+            "readonly": true, 
+            "type": "number"
+        }, 
+        "monitors": {
+            "items": {
+                "$ref": "#/definitions/reference"
+            }, 
+            "type": "array"
+        }, 
+        "name": {
+            "required": true, 
+            "type": "string"
+        }, 
+        "nodes": {
+            "items": {
+                "$ref": "#/definitions/node"
+            }, 
+            "required": true, 
+            "type": "array"
+        }, 
+        "passive": {
+            "default": false, 
+            "type": "boolean"
+        }, 
+        "ref": {
+            "readonly": true, 
+            "type": "string"
+        }, 
+        "roles": {
+            "items": {
+                "$ref": "#/definitions/reference"
+            }, 
+            "readonly": true, 
+            "type": "array"
+        }, 
+        "ssh_forward": {
+            "default": true, 
+            "type": "boolean"
+        }, 
+        "uncommitted": {
+            "readonly": true, 
+            "type": "boolean"
+        }
+    }, 
+    "type": "object"
+}
