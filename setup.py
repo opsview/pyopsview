@@ -3,7 +3,7 @@
 
 from setuptools import setup, find_packages
 
-PYOPSVIEW_VERSION = '5.3.3'
+PYOPSVIEW_VERSION = '6.2.0'
 
 with open('README.md', 'r') as fno:
     LONG_DESCRIPTION = fno.read()
@@ -16,6 +16,7 @@ package = {
     'version': PYOPSVIEW_VERSION,
     'description': 'Python client for the Opsview API',
     'long_description': LONG_DESCRIPTION,
+    'long_description_content_type': 'text/markdown',
 
     'maintainer': 'Joshua Griffiths',
     'maintainer_email': 'joshua.griffiths@opsview.com',

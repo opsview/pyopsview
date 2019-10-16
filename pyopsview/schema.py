@@ -232,6 +232,8 @@ class SchemaField(object):
         field = SchemaField(self._items)
 
         def encode(value, field=field):
+            if value is None:
+                return None
             if not isinstance(value, list):
                 value = [value]
 
@@ -269,7 +271,9 @@ class SchemaField(object):
             """Encode an object (dictionary) for the Opsview API. Uses the
             altname for each field schema if specified.
             """
-            if not isinstance(value, dict):
+            if value is None:
+                return None
+            elif not isinstance(value, dict):
                 # This is gonna be quite clever... if we're given a value which
                 # ISNT a dictionary type, try and encode it anyway by finding
                 # the only field it can go in
