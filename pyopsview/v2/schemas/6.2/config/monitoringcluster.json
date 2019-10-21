@@ -31,6 +31,7 @@
             "type": "boolean"
         },
         "uncommitted": {
+            "readonly": true,
             "type": "boolean"
         },
         "event_handlers_enabled": {
@@ -48,6 +49,7 @@
             "type": "string"
         },
         "name": {
+            "required": true,
             "type": "string"
         }
     },
