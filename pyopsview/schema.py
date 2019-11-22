@@ -1,9 +1,14 @@
 #!/usr/bin/env python
 
-from __future__ import unicode_literals
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
+
 import errno
 import pkg_resources
+
 import six
+
 from pyopsview.utils import json
 
 # Once a schema has been loaded will be cached here
@@ -40,16 +45,16 @@ def encode_number(value):
         return None
 
     try:
-        return unicode(int(value))
+        return int(value)
     except ValueError:
         pass
 
     try:
-        return unicode(float(value))
+        return float(value)
     except ValueError:
         pass
 
-    return unicode(value)
+    return value
 
 
 @decoder('number')
@@ -81,7 +86,7 @@ def encode_boolean(value):
         except ValueError:
             pass
 
-    return unicode("1") if value else unicode("0")
+    return "1" if value else "0"
 
 
 @decoder('boolean')
@@ -112,7 +117,7 @@ def encode_decode_string(value):
     if value is None:
         return None
 
-    return unicode(value)
+    return value
 
 
 @encoder('null')
@@ -265,7 +270,7 @@ class SchemaField(object):
         self._object_fields = fields
 
         def get_pyname(name, field):
-            return (field._altname if field._altname else name)
+            return field._altname if field._altname else name
 
         def encode(value, fields=fields):
             """Encode an object (dictionary) for the Opsview API. Uses the
@@ -373,10 +378,8 @@ class SchemaField(object):
             try:
                 return encoder(value)
             except ValueError as ex:
-                pass
-
-        raise ValueError('Value \'{}\' is invalid. {}'
-                         .format(value, ex.message))
+                raise ValueError("Invalid value: {!r}: {!r}"
+                                 .format(value, ex.message))
 
     def decode(self, value):
         """The decoder for this schema.
@@ -392,10 +395,8 @@ class SchemaField(object):
             try:
                 return decoder(value)
             except ValueError as ex:
-                pass
-
-        raise ValueError('Value \'{}\' is invalid. {}'
-                         .format(value, ex.message))
+                raise ValueError("Invalid value: {!r}: {!r}"
+                                 .format(value, ex.message))
 
 
 def _get_schema(_version, _type, name):
@@ -430,6 +431,6 @@ def load_schema(_type, name, version, strict=False):
     schema_hash = (_type, name, version)
     if schema_hash not in _schemas_loaded:
         schema_str = _get_schema(version, _type, name)
-        _schemas_loaded[schema_hash] = json.loads(unicode(schema_str))
+        _schemas_loaded[schema_hash] = json.loads(schema_str)
 
     return SchemaField(_schemas_loaded[schema_hash], strict_coding=strict)

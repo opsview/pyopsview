@@ -5,7 +5,14 @@ from pyopsview.utils import json
 
 
 class OpsviewClientException(Exception):
-    """Base exception for all opsview client exceptions"""
+    """Base exception for all opsview client exceptions.
+
+    Takes a `response` and attempts to extract the error detail. If JSON
+    decoding fails, the original (possibly encoded) text is used..
+
+    If no error detail is present in the response, details of how to enable
+    response details in Opsview Web are used.
+    """
     def __init__(self, response):
         try:
             response_decoded = json.loads(response)

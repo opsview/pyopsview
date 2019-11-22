@@ -1,7 +1,10 @@
 #!/usr/bin/env python
 # -*- encoding: UTF-8 -*-
 
-from __future__ import (unicode_literals)
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
+
 import pkg_resources
 
 try:
@@ -22,7 +25,7 @@ def _get_schema(schema_type, schema_name):
 def read_schema(_type, name):
     """Returns the deserialized representation of a schema, specified using the
     name of the schema"""
-    return json.loads(unicode(_get_schema(_type, name)))
+    return json.loads(_get_schema(_type, name))
 
 
 def normalize_version(version):
@@ -46,7 +49,7 @@ def normalize_version(version):
             0,
         )
     else:
-        raise ValueError('Cannot normalize version: %s' % version)
+        raise ValueError('Cannot normalize version: %r' % version)
 
 
 def version_cmp(version_a, version_b):
@@ -54,7 +57,7 @@ def version_cmp(version_a, version_b):
     a = normalize_version(version_a)
     b = normalize_version(version_b)
 
-    i_a = a[0] * 100 + a[1] * 10 + a[0] * 1
-    i_b = b[0] * 100 + b[1] * 10 + b[0] * 1
+    i_a = a[0] * 100 + a[1] * 10 + a[2]
+    i_b = b[0] * 100 + b[1] * 10 + b[2]
 
     return i_a - i_b
