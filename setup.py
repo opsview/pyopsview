@@ -3,7 +3,7 @@
 
 from setuptools import setup, find_packages
 
-PYOPSVIEW_VERSION = '6.2.1'
+PYOPSVIEW_VERSION = '6.2.2'
 
 with open('README.md', 'r') as fno:
     LONG_DESCRIPTION = fno.read()
