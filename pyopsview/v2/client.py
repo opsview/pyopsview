@@ -17,7 +17,7 @@ class Client(object):
 
     default_headers = {
         'Accept': 'application/json',
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json; charset=utf-8',
     }
 
     def __init__(self, endpoint, username=None, password=None, token=None,
@@ -92,7 +92,8 @@ class Client(object):
         response = self._session.request(url=self._url(path), method=method,
                                          data=data, params=params,
                                          **self._request_kwds)
-
+        # Force the response to be decoded as utf-8
+        response.encoding = 'utf-8'
         if response.status_code not in expected:
             raise exc.OpsviewClientException(response.text)
 
