@@ -38,7 +38,7 @@ class CollectorManager(OpsviewResourceManager):
 
     def find_one(self, params=None, **kwds):
         try:
-            return self.find(params=params, **kwds).next()
+            return next(self.find(params=params, **kwds))
         except StopIteration:
             return None
 
