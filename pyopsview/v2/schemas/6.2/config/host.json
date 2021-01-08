@@ -129,20 +129,20 @@
                     "type": "boolean"
                 }, 
                 "discards_critical": {
-                    "type": "number"
+                    "type": "string"
                 }, 
                 "discards_warning": {
-                    "type": "number"
+                    "type": "string"
                 }, 
                 "duplicatename": {
                     "altname": "duplicate_name", 
                     "type": "boolean"
                 }, 
                 "errors_critical": {
-                    "type": "number"
+                    "type": "string"
                 }, 
                 "errors_warning": {
-                    "type": "number"
+                    "type": "string"
                 }, 
                 "indexid": {
                     "altname": "index_id", 
