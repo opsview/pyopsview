@@ -28,7 +28,7 @@ class OpsviewClientException(Exception):
                 detail = '\nDetail: "{}"'.format(response_decoded['detail'])
             else:
                 detail = ("To include error detail in API responses, set "
-                          "'ControllerBase::Rest: {include_error_detail: 1}' "
+                          "'ControllerBase::REST: {include_error_detail: 1}' "
                           "in opsview_web_local.yml")
 
             super(OpsviewClientException, self).__init__(
