@@ -131,3 +131,12 @@ class Client(object):
 
     def user_info(self):
         return self.get('/user')
+
+    def service_status(self, **kwds):
+        return self.get('/status/service', **kwds)
+
+    def acknowledge_event(self, **kwds):
+        return self.post('/acknowledge',**kwds)
+
+    def acknowledge_delete(self, **kwds):
+        return self.delete('/acknowledge', **kwds)
