@@ -97,7 +97,7 @@ for adding an acknowledgement to the unhandled event for Opsview on check Connec
     acknowldege_details = client.acknowledge_event(params={'svc.hostname': 'Opsview', 'svc.servicename': 'Connectivity - LAN'} , data={'notify': str(int(bool(True))), 'sticky': str(int(bool(True))), 'comment': 'Acknowledged and actioned by user'})
 
 for adding an acknowldegement to the unhandled host event for Opsview
-    acknowldege_details = client.acknowledge_event(params={'hst.hostname': 'Opsview', data={'notify': str(int(bool(True))), 'sticky': str(int(bool(True))), 'comment': 'Acknowledged and actioned by user'})
+    acknowldege_details = client.acknowledge_event(params={'hst.hostname': 'Opsview'}, data={'notify': str(int(bool(True))), 'sticky': str(int(bool(True))), 'comment': 'Acknowledged and actioned by user'})
 
 for adding an acknowldegement to all unhandled host and service events for Opsview
     acknowldege_details = client.acknowledge_event(params={'svc.hostname': 'Opsview'}, data={'notify': str(int(bool(True))), 'sticky': str(int(bool(True))), 'comment': 'Acknowledged and actioned by user'})
