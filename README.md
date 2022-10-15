@@ -105,10 +105,10 @@ for adding an acknowldegement to all unhandled host and service events for Opsvi
 for deleting the acknowledgement for Opsview against check Connectivity - LAN
     acknowledge_details = client.acknowledge_delete(params={'svc.hostname': 'Opsview', 'svc.servicename': 'Connectivity - LAN'})
 
-for deleting the acknowledgement against a host
+for deleting the acknowledgement against a host event
     acknowledge_details = client.acknowledge_delete(params={'hst.hostname': 'Opsview'})
 
-for deleting all the acknowledgements against a host
+for deleting all the acknowledgements against service checks for a host
     acknowledge_details = client.acknowledge_delete(params={'svc.hostname': 'Opsview'})    
 ```
 
