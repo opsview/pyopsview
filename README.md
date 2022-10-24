@@ -88,10 +88,13 @@ for template in opsview_master['host_templates']:
     master_service_checks += template_detail['service_checks']
 
 for status of a host and its service checks
-    service_status = client.service_status(params={'hostname': devicename, 'cols': '+includehandleddetails'})
+    service_status = client.status.service.find_one(hostname=devicename)
+
+for status of all unhandled hosts
+    service_status = list(client.status.service.find(host_filter='unhandled'))
 
 for all unhandled checks
-    unhandled_checks = client.service_status(params={'filter': 'unhandled'})['list']
+    unhandled_checks = list(client.status.service.find(filter= 'unhandled'))
 
 for adding an acknowledgement to the unhandled event for Opsview on check Connectivity - LAN
     acknowldege_details = client.acknowledge_event(params={'svc.hostname': 'Opsview', 'svc.servicename': 'Connectivity - LAN'} , data={'notify': str(int(bool(True))), 'sticky': str(int(bool(True))), 'comment': 'Acknowledged and actioned by user'})
