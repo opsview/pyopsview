@@ -100,18 +100,18 @@ for adding an acknowledgement to the unhandled event for Opsview on check Connec
     acknowldege_details = client.acknowledge_event(params={'svc.hostname': 'Opsview', 'svc.servicename': 'Connectivity - LAN'} , data={'notify': str(int(bool(True))), 'sticky': str(int(bool(True))), 'comment': 'Acknowledged and actioned by user'})
 
 for adding an acknowldegement to the unhandled host event for Opsview
-    acknowldege_details = client.acknowledge_event(params={'hst.hostname': 'Opsview', data={'notify': str(int(bool(True))), 'sticky': str(int(bool(True))), 'comment': 'Acknowledged and actioned by user'})
+    acknowldege_details = client.acknowledge_event(params={'hst.hostname': 'Opsview'}, data={'notify': str(int(bool(True))), 'sticky': str(int(bool(True))), 'comment': 'Acknowledged and actioned by user'})
 
 for adding an acknowldegement to all unhandled host and service events for Opsview
-    acknowldege_details = client.acknowledge_event(params={'svc.hostname': 'Opsview', data={'notify': str(int(bool(True))), 'sticky': str(int(bool(True))), 'comment': 'Acknowledged and actioned by user'})
+    acknowldege_details = client.acknowledge_event(params={'svc.hostname': 'Opsview'}, data={'notify': str(int(bool(True))), 'sticky': str(int(bool(True))), 'comment': 'Acknowledged and actioned by user'})
 
 for deleting the acknowledgement for Opsview against check Connectivity - LAN
     acknowledge_details = client.acknowledge_delete(params={'svc.hostname': 'Opsview', 'svc.servicename': 'Connectivity - LAN'})
 
-for deleting the acknowledgement against a host
+for deleting the acknowledgement against a host event
     acknowledge_details = client.acknowledge_delete(params={'hst.hostname': 'Opsview'})
 
-for deleting all the acknowledgements against a host
+for deleting all the acknowledgements against service checks for a host
     acknowledge_details = client.acknowledge_delete(params={'svc.hostname': 'Opsview'})    
 ```
 
