@@ -11,6 +11,7 @@ from pyopsview import exceptions as exc
 from pyopsview import schema
 from pyopsview.utils import json
 from pyopsview.v2.config import ConfigClient
+from pyopsview.v2.status import StatusClient
 
 
 class Client(object):
@@ -49,6 +50,7 @@ class Client(object):
 
     def _init_clients(self):
         self.config = ConfigClient(self)
+        self.status = StatusClient(self)
 
     @property
     def version(self):
