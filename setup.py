@@ -20,8 +20,8 @@ package = {
 
     'maintainer': 'Joshua Griffiths',
     'maintainer_email': 'joshua.griffiths@opsview.com',
-    'url': 'https://github.com/jpgxs/pyopsview',
-    'download_url': 'https://github.com/jpgxs/pyopsview',
+    'url': 'https://github.com/opsview/pyopsview',
+    'download_url': 'https://github.com/opsview/pyopsview',
 
     'packages': find_packages(),
     'package_dir': {
