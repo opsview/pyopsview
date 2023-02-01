@@ -2,7 +2,7 @@
 
 **Python REST API Client for Opsview!**
 
-![Opsview Logo](https://raw.githubusercontent.com/jpgxs/pyopsview/master/opsview.png)
+![Opsview Logo](https://raw.githubusercontent.com/opsview/pyopsview/master/opsview.png)
 
 Copyright (C) 2003-2023 Opsview Limited
 
@@ -12,7 +12,7 @@ Copyright (C) 2003-2023 Opsview Limited
 
 ```bash
 # Using `pip`
-pip install -r https://raw.githubusercontent.com/jpgxs/pyopsview/master/requirements.txt
+pip install -r https://raw.githubusercontent.com/opsview/pyopsview/master/requirements.txt
 
 # Using `apt`
 apt update && apt install python-requests python-six
@@ -37,7 +37,7 @@ urpmi python-requests python-six
 pip install pyopsview
 
 # From source
-git clone https://github.com/jpgxs/pyopsview
+git clone https://github.com/opsview/pyopsview
 cd pyopsview
 python setup.py install
 ```
