@@ -4,6 +4,8 @@
 
 ![Opsview Logo](https://raw.githubusercontent.com/jpgxs/pyopsview/master/opsview.png)
 
+Copyright (C) 2003-2023 Opsview Limited
+
 ## Installation
 
 ### Installing Dependencies
