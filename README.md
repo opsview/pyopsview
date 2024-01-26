@@ -4,7 +4,7 @@
 
 ![Opsview Logo](https://raw.githubusercontent.com/opsview/pyopsview/master/opsview.png)
 
-Copyright (C) 2003-2023 Opsview Limited
+Copyright (C) 2003-2024 Opsview Limited
 
 ## Installation
 
