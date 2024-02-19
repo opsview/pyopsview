@@ -18,8 +18,8 @@ package = {
     'long_description': LONG_DESCRIPTION,
     'long_description_content_type': 'text/markdown',
 
-    'maintainer': 'Joshua Griffiths',
-    'maintainer_email': 'joshua.griffiths@opsview.com',
+    'maintainer': 'ITRS Group Ltd',
+    'maintainer_email': '',
     'url': 'https://github.com/opsview/pyopsview',
     'download_url': 'https://github.com/opsview/pyopsview',
 
