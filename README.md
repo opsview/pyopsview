@@ -4,7 +4,7 @@
 
 ![Opsview Logo](https://raw.githubusercontent.com/opsview/pyopsview/master/opsview.png)
 
-Copyright (C) 2003-2024 ITRS Group Ltd
+Copyright (C) 2003-2025 ITRS Group Ltd
 
 ## Installation
 
