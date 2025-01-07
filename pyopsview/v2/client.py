@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# Copyright (C) 2003-2025 ITRS Group Ltd. All rights reserved
 
 from __future__ import absolute_import
 from __future__ import division
@@ -42,7 +43,7 @@ class Client(object):
         self._username = username
         self._password = password
         self._session = requests.session()
-        self._session.headers = Client.default_headers
+        self._session.headers = Client.default_headers.copy()
         self._authenticate()
         self._load_schema = self._get_schema_loader(strict)
         self._init_clients()
