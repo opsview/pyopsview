@@ -1,0 +1,111 @@
+{
+    "definitions": {
+        "reference": {
+            "properties": {
+                "markdown": {
+                    "type": "string"
+                },
+                "acknowledged": {
+                    "type": "string"
+                },
+                "state": {
+                    "type": "string"
+                },
+                "unhandled": {
+                    "type": "string"
+                },
+                "perfdata_available": {
+                        "type": "string"
+                },
+                "max_check_attempts": {
+                    "type": "string"
+                },
+                "state_duration": {
+                    "type": "string"
+                },
+                "name": {
+                    "required": true,
+                    "type": "string"
+                },
+                "state_type": {
+                    "type": "string"
+                },
+                "acknowledged_author": {
+                    "type": "string"
+                },
+                "output": {
+                    "type": "string"
+                },
+                "current_check_attempt": {
+                    "type": "string"
+                },
+                "service_object_id": {
+                    "type": "string"
+                },
+                "acknowledged_comment": {
+                    "type": "string"
+                },
+                "downtime": {
+                    "type": "string"
+                },
+                "last_check": {
+                    "type": "string"
+                }
+            },
+        "type": "object"
+        }
+    },
+    "properties": {
+        "icon": {
+            "type": "string"
+        },
+        "state": {
+            "type": "string"
+        },
+        "unhandled": {
+            "type": "string"
+        },
+        "max_check_attempts": {
+            "type": "string"
+        },
+        "num_interfaces": {
+            "type": "string"
+        },
+        "state_duration": {
+            "type": "string"
+        },
+        "services": {
+            "default": [],
+            "items": {
+                "$ref": "#/definitions/reference"
+            },
+            "type": "array"
+        },
+        "name": {
+            "required": true,
+            "type": "string"
+        },
+        "state_type": {
+            "type": "string"
+        },
+        "current_check_attempt": {
+            "type": "string"
+        },
+        "output": {
+            "type": "string"
+        },
+        "num_services": {
+            "type": "string"
+        },
+        "downtime": {
+            "type": "string"
+        },
+        "last_check": {
+            "type": "string"
+        },
+        "alias": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
