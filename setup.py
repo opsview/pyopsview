@@ -1,15 +1,19 @@
 #!/usr/bin/env python
 # -*- encoding: UTF-8 -*-
+# Copyright (C) 2003-2026 ITRS Group Ltd. All rights reserved
 
 from setuptools import setup, find_packages
 
-PYOPSVIEW_VERSION = '6.2.5'
+PYOPSVIEW_VERSION = '6.2.6'
 
 with open('README.md', 'r') as fno:
     LONG_DESCRIPTION = fno.read()
 
 with open('requirements.txt', 'r') as fno:
     PYOPSVIEW_REQUIRES = fno.readlines()
+
+with open('requirements-test.txt', 'r') as fno:
+    PYOPSVIEW_TEST_REQUIRES = fno.readlines()
 
 package = {
     'name': 'pyopsview',
@@ -32,6 +36,9 @@ package = {
     },
     'include_package_data': True,
     'install_requires': PYOPSVIEW_REQUIRES,
+    'extras_require': {
+        'test': PYOPSVIEW_TEST_REQUIRES,
+    },
 }
 
 setup(**package)
