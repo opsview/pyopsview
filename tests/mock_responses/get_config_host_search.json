@@ -1,0 +1,82 @@
+{
+    "list": [
+        {
+            "alias": "",
+            "business_components": [],
+            "check_attempts": "2",
+            "check_command": {
+                "name": "ping",
+                "ref": "/rest/config/hostcheckcommand/15"
+            },
+            "check_interval": "300",
+            "check_period": {
+                "name": "24x7",
+                "ref": "/rest/config/timeperiod/1"
+            },
+            "enable_snmp": "0",
+            "event_handler": "",
+            "event_handler_always_exec": "0",
+            "flap_detection_enabled": "1",
+            "hostattributes": [],
+            "hostgroup": {
+                "name": "Monitoring Servers",
+                "ref": "/rest/config/hostgroup/2"
+            },
+            "hosttemplates": [
+                {
+                    "name": "Application - HTTP",
+                    "ref": "/rest/config/hosttemplate/226"
+                }
+            ],
+            "icon": {
+                "name": "LOGO - Opsview",
+                "path": "/static/images/logos/opsview.png"
+            },
+            "id": "74",
+            "ip": "itrsgroup.com",
+            "keywords": [],
+            "last_updated": "1736936427",
+            "monitored_by": {
+                "name": "Master Monitoring Server",
+                "ref": "/rest/config/monitoringcluster/1"
+            },
+            "name": "itrsgroup.com",
+            "notification_options": "u,d,r",
+            "notification_period": {
+                "name": "24x7",
+                "ref": "/rest/config/timeperiod/1"
+            },
+            "other_addresses": "",
+            "parents": [],
+            "rancid_autoenable": "0",
+            "rancid_connection_type": "ssh",
+            "rancid_username": "",
+            "rancid_vendor": {
+                "name": "A10",
+                "ref": "/rest/config/rancidvendor/1"
+            },
+            "ref": "/rest/config/host/74",
+            "retry_check_interval": "60",
+            "servicechecks": [],
+            "snmp_extended_throughput_data": "0",
+            "snmp_max_msg_size": "0",
+            "snmp_port": "161",
+            "snmp_use_getnext": "0",
+            "snmp_use_ifname": "1",
+            "snmp_version": "2c",
+            "snmpv3_authprotocol": null,
+            "snmpv3_privprotocol": null,
+            "snmpv3_username": "",
+            "tidy_ifdescr_level": "0",
+            "uncommitted": "0",
+            "use_rancid": "0"
+        }
+    ],
+    "summary": {
+        "allrows": "1",
+        "page": "1",
+        "rows": "1",
+        "totalpages": "1",
+        "totalrows": "1"
+    }
+}

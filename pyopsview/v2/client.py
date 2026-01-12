@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright (C) 2003-2025 ITRS Group Ltd. All rights reserved
+# Copyright (C) 2003-2026 ITRS Group Ltd. All rights reserved
 
 from __future__ import absolute_import
 from __future__ import division
