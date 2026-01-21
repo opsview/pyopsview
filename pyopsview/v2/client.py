@@ -12,6 +12,7 @@ from pyopsview import exceptions as exc
 from pyopsview import schema
 from pyopsview.utils import json
 from pyopsview.v2.config import ConfigClient
+from pyopsview.v2.status import StatusClient
 
 
 class Client(object):
@@ -50,6 +51,7 @@ class Client(object):
 
     def _init_clients(self):
         self.config = ConfigClient(self)
+        self.status = StatusClient(self)
 
     @property
     def version(self):
@@ -132,3 +134,9 @@ class Client(object):
 
     def user_info(self):
         return self.get('/user')
+
+    def acknowledge_event(self, **kwds):
+        return self.post('/acknowledge',**kwds)
+
+    def acknowledge_delete(self, **kwds):
+        return self.delete('/acknowledge', **kwds)
